@@ -233,8 +233,11 @@ function ordenar() {
 
 // Insercion de Botones //
 
-/*  let botonListar = document.querySelector(".listarProd");
-botonListar.addEventListener("click", listarProductos());
+let botonListar = document.querySelector("#listarProd");
+botonListar.addEventListener("click", listarProductos);
 
-let botonAgregar = document.querySelector(".agregarProd");
-botonAgregar.addEventListener("click", agregarProducto(productos));*/
+let botonAgregar = document.querySelector("#agregarProd");
+botonAgregar.addEventListener("click", agregarProducto);
+
+let botonOrdenar = document.querySelector("#ordenarProd");
+botonOrdenar.addEventListener("click", ordenar);
