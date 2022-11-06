@@ -165,14 +165,12 @@ const ordenadoCantidad = [];
 
 // definición de la clase Producto
 class Producto {
-  constructor(id, nombre, cantidad, importe) {
+  constructor(id, nombre, cantidad, importe, importeFinal) {
     this.Identificador = id;
     this.Nombre = nombre;
     this.Cantidad = cantidad;
     this.Importe = importe;
-  }
-  precioFinal() {
-    return parseFloat((this.importe * IVA).toFixed(2));
+    this.ImporteFinal = importeFinal;
   }
 }
 
@@ -185,7 +183,8 @@ const agregarProducto = () => {
   let nombre = prompt("Nombre del nuevo producto:").toUpperCase();
   let cantidad = parseInt(prompt("Ingrese la cantidad comprada:"));
   let importe = parseFloat(prompt("Importe del producto (sin IVA):"));
-  productos.push(new Producto(id, nombre, cantidad, importe));
+  let importeFinal = parseFloat(importe * 1.21).toFixed(2);
+  productos.push(new Producto(id, nombre, cantidad, importe, importeFinal));
 };
 
 // función para listar el array con productos cargados
@@ -194,16 +193,27 @@ function listarProductos() {
 }
 
 // comprobación de carga
+let comprobacion = [];
+
 do {
   let comprobacion = prompt(
     "¿Quiere agregar un nuevo producto? (responder sí o no)"
   );
-  if (comprobacion === "no" || comprobacion === "NO" || comprobacion === "No") {
+  if (
+    comprobacion === "no" ||
+    comprobacion === "NO" ||
+    comprobacion === "No" ||
+    comprobacion === ""
+  ) {
     break;
   } else {
     agregarProducto(productos);
   }
-} while (comprobacion != "no" || comprobacion != "NO" || comprobacion != "NO");
+} while (
+  comprobacion !== "no" ||
+  comprobacion !== "NO" ||
+  comprobacion !== "No"
+);
 
 listarProductos();
 
