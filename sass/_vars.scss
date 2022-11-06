@@ -1,0 +1,26 @@
+$widthTituloH1: 3rem;
+$widthXlDesktop: 1200px;
+$widthLDesktop: 1017px;
+$widthMDesktop: 1100px;
+$widthXLMobile: 900px;
+$widthLMobile: 610px;
+$widthMMobile: 450px;
+
+@mixin tooltip {
+  display: block;
+  background-color: black;
+  color: white;
+}
+
+@mixin tooltip-box($left, $bottom) {
+  display: none;
+  width: 10rem;
+  position: absolute;
+  line-height: 20px;
+  z-index: 500;
+  text-align: center;
+  bottom: $bottom;
+  left: $left;
+  border-style: groove;
+  border-radius: 5px;
+}
