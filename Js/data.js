@@ -35,7 +35,7 @@ const creoID = () => parseInt(Math.random() * 10000);
 const tinturaGanoderma = new Producto(
   creoID(),
   "Ganoderma Lucidum",
-  "tintura",
+  "Tintura",
   "alcoholaturas",
   "50Ml",
   1000,
@@ -45,7 +45,7 @@ const tinturaGanoderma = new Producto(
 const tinturaHericium = new Producto(
   creoID(),
   "Hericium Erinaceum",
-  "tintura",
+  "Tintura",
   "alcoholaturas",
   "50Ml",
   1000,
@@ -55,7 +55,7 @@ const tinturaHericium = new Producto(
 const tinturaCordiceps = new Producto(
   creoID(),
   "Cordiceps Militaris",
-  "tintura",
+  "Tintura",
   "alcoholaturas",
   "50Ml",
   1000,
@@ -66,32 +66,32 @@ const tinturaCordiceps = new Producto(
 const setaGanoderma = new Producto(
   creoID(),
   "Ganoderma Lucidum",
-  "seta",
+  "Setas",
   "comestibles",
   "1 Kg.",
   1000,
-  "../assets/img/goteros.jpg",
+  "../assets/img/setas disecadas.jpg",
   "Parte de el aporte medicinal de este maravilloso reino fungi puede ser incorporado a través de las deliciosas setas gourmet. Cada cosecha es realizada bajo los mas altos estandares de asepsia, asegurando una correcta recolección y guardado para su posterior consumo. Las setas pueden consumirse frescas o deshidratadas en una incontable variedad de recetas y formatos. Mediante un cuidado proceso de secado a baja temperatura y escasa exposición a la luz solar, nuestras setas se destacan por mantener buena textura y conservar los aromas propios de cada variedad."
 );
 
 const setaHericium = new Producto(
   creoID(),
   "Hericium Erinaceum",
-  "seta",
+  "Setas",
   "comestibles",
   "1 kg.",
   1000,
-  "../assets/img/goteros.jpg",
+  "../assets/img/setas disecadas.jpg",
   "Parte de el aporte medicinal de este maravilloso reino fungi puede ser incorporado a través de las deliciosas setas gourmet. Cada cosecha es realizada bajo los mas altos estandares de asepsia, asegurando una correcta recolección y guardado para su posterior consumo. Las setas pueden consumirse frescas o deshidratadas en una incontable variedad de recetas y formatos. Mediante un cuidado proceso de secado a baja temperatura y escasa exposición a la luz solar, nuestras setas se destacan por mantener buena textura y conservar los aromas propios de cada variedad."
 );
 const setaCordiceps = new Producto(
   creoID(),
   "Cordiceps Militaris",
-  "seta",
+  "Setas",
   "comestibles",
   "1 kg.",
   1000,
-  "../assets/img/goteros.jpg",
+  "../assets/img/setas disecadas.jpg",
   "Parte de el aporte medicinal de este maravilloso reino fungi puede ser incorporado a través de las deliciosas setas gourmet. Cada cosecha es realizada bajo los mas altos estandares de asepsia, asegurando una correcta recolección y guardado para su posterior consumo. Las setas pueden consumirse frescas o deshidratadas en una incontable variedad de recetas y formatos. Mediante un cuidado proceso de secado a baja temperatura y escasa exposición a la luz solar, nuestras setas se destacan por mantener buena textura y conservar los aromas propios de cada variedad."
 );
 
@@ -102,7 +102,7 @@ const lcGanoderma = new Producto(
   "propagacion",
   "10 ml.",
   1000,
-  "../assets/img/goteros.jpg",
+  "../assets/img/Liquid culture.jpg",
   "La Liquid Culture (Cultura Liquida) es uno de los medios de reproducción miceliar de mayor popularidad por la baja dificultad tanto en la forma de trabajo como en su forma de almacenaje y guardado. Consiste en una solucion nutritiva que permite generar una 'nube de micelio' totalmente funcional, apto para su inoculacion a grano o su depuración o conservacion en placa petri. Con una vida util superior a los 3 meses (en condiciones optimas) este metodo de propagación es sumamente rendidor si se lo trabaja de manera adecuada y permite almacenar en poco espacio muchas variedades de hongos. Nuestra cultura liquida se entrega en jeringas plasticas esterilizadas de 10 ml c/u. cerradas en bolsas esterilizadas los luz UV."
 );
 
@@ -113,7 +113,7 @@ const lcHericium = new Producto(
   "propagacion",
   "10 ml.",
   1000,
-  "../assets/img/goteros.jpg",
+  "../assets/img/Liquid culture.jpg",
   "La Liquid Culture (Cultura Liquida) es uno de los medios de reproducción miceliar de mayor popularidad por la baja dificultad tanto en la forma de trabajo como en su forma de almacenaje y guardado. Consiste en una solucion nutritiva que permite generar una 'nube de micelio' totalmente funcional, apto para su inoculacion a grano o su depuración o conservacion en placa petri. Con una vida util superior a los 3 meses (en condiciones optimas) este metodo de propagación es sumamente rendidor si se lo trabaja de manera adecuada y permite almacenar en poco espacio muchas variedades de hongos. Nuestra cultura liquida se entrega en jeringas plasticas esterilizadas de 10 ml c/u. cerradas en bolsas esterilizadas los luz UV."
 );
 const lcCordiceps = new Producto(
@@ -123,7 +123,7 @@ const lcCordiceps = new Producto(
   "propagacion",
   "10 ml.",
   1000,
-  "../assets/img/goteros.jpg",
+  "../assets/img/Liquid culture.jpg",
   "La Liquid Culture (Cultura Liquida) es uno de los medios de reproducción miceliar de mayor popularidad por la baja dificultad tanto en la forma de trabajo como en su forma de almacenaje y guardado. Consiste en una solucion nutritiva que permite generar una 'nube de micelio' totalmente funcional, apto para su inoculacion a grano o su depuración o conservacion en placa petri. Con una vida util superior a los 3 meses (en condiciones optimas) este metodo de propagación es sumamente rendidor si se lo trabaja de manera adecuada y permite almacenar en poco espacio muchas variedades de hongos. Nuestra cultura liquida se entrega en jeringas plasticas esterilizadas de 10 ml c/u. cerradas en bolsas esterilizadas los luz UV."
 );
 
@@ -134,7 +134,7 @@ const petriGanoderma = new Producto(
   "propagacion",
   "90x90",
   1000,
-  "../assets/img/goteros.jpg",
+  "../assets/img/placa petri 1.jpg",
   "Como una novedosa tecnica de aislamiento, depuración y conservacion de cepas, tenemos disponibilidad de Placas petri de 90 x 10 (vidrio de borosilicato o plastico) con base gelificadas de PDA (Potatoe - Dextrose - Agar) con muchisimas variedades. Las placas se entregan 100% colonizadas; es por ello que los pedidos deben solicitarse con una anticipacion no menor a 10 dias habiles. Todos nuestros elementos de propagación cumplen con las mas estrictas normas de asepsia para asegurar el exito en todos tus cultivos."
 );
 
@@ -145,7 +145,7 @@ const petriHericium = new Producto(
   "propagacion",
   "90x90",
   1000,
-  "../assets/img/goteros.jpg",
+  "../assets/img/placa petri 1.jpg",
   "Como una novedosa tecnica de aislamiento, depuración y conservacion de cepas, tenemos disponibilidad de Placas petri de 90 x 10 (vidrio de borosilicato o plastico) con base gelificadas de PDA (Potatoe - Dextrose - Agar) con muchisimas variedades. Las placas se entregan 100% colonizadas; es por ello que los pedidos deben solicitarse con una anticipacion no menor a 10 dias habiles. Todos nuestros elementos de propagación cumplen con las mas estrictas normas de asepsia para asegurar el exito en todos tus cultivos."
 );
 
@@ -156,39 +156,39 @@ const petriCordiceps = new Producto(
   "propagacion",
   "90x90",
   1000,
-  "../assets/img/goteros.jpg",
+  "../assets/img/placa petri 1.jpg",
   "Como una novedosa tecnica de aislamiento, depuración y conservacion de cepas, tenemos disponibilidad de Placas petri de 90 x 10 (vidrio de borosilicato o plastico) con base gelificadas de PDA (Potatoe - Dextrose - Agar) con muchisimas variedades. Las placas se entregan 100% colonizadas; es por ello que los pedidos deben solicitarse con una anticipacion no menor a 10 dias habiles. Todos nuestros elementos de propagación cumplen con las mas estrictas normas de asepsia para asegurar el exito en todos tus cultivos."
 );
 
 const granoGanoderma = new Producto(
   creoID(),
   "Ganoderma Lucidum",
-  "Grano",
+  "Grain Spawn",
   "propagacion",
   "1 Kg.",
   1000,
-  "../assets/img/goteros.jpg",
+  "../assets/img/grain spawn.jpg",
   "Conocida como una de las tecnicas mas antiguas en la reproduccion de micelio, presentamos el formato de propagación 'Grain Spawn' que consiste en bolsas de polipropileno con grano inoculado y colonizado (puede variar dependiendo la disponibilidad del stock al momento de la compra) listo para ser sometido a un proceso de frutificación o disponible para realizar una nueva propagacion sobre otro sustrato. Cada bolsa de sustrato esta realizado en base a un minucioso estudio y pruebas de adaptabilidad de cada cepa entregando, unicamente, un producto de calidad y alto valor nutricional teniendo en cuenta las caracteristicas de reproduccion medioambientales de cada hongo."
 );
 
 const granoHericium = new Producto(
   creoID(),
   "Hericium Erinaceum",
-  "Grano",
+  "Grain Spawn",
   "propagacion",
   "1 Kg.",
   1000,
-  "../assets/img/goteros.jpg",
+  "../assets/img/grain spawn.jpg",
   "Conocida como una de las tecnicas mas antiguas en la reproduccion de micelio, presentamos el formato de propagación 'Grain Spawn' que consiste en bolsas de polipropileno con grano inoculado y colonizado (puede variar dependiendo la disponibilidad del stock al momento de la compra) listo para ser sometido a un proceso de frutificación o disponible para realizar una nueva propagacion sobre otro sustrato. Cada bolsa de sustrato esta realizado en base a un minucioso estudio y pruebas de adaptabilidad de cada cepa entregando, unicamente, un producto de calidad y alto valor nutricional teniendo en cuenta las caracteristicas de reproduccion medioambientales de cada hongo."
 );
 const granoCordiceps = new Producto(
   creoID(),
   "Cordiceps Militaris",
-  "Grano",
+  "Grain Spawn",
   "propagacion",
   "1 Kg.",
   1000,
-  "../assets/img/goteros.jpg",
+  "../assets/img/grain spawn.jpg",
   "Conocida como una de las tecnicas mas antiguas en la reproduccion de micelio, presentamos el formato de propagación 'Grain Spawn' que consiste en bolsas de polipropileno con grano inoculado y colonizado (puede variar dependiendo la disponibilidad del stock al momento de la compra) listo para ser sometido a un proceso de frutificación o disponible para realizar una nueva propagacion sobre otro sustrato. Cada bolsa de sustrato esta realizado en base a un minucioso estudio y pruebas de adaptabilidad de cada cepa entregando, unicamente, un producto de calidad y alto valor nutricional teniendo en cuenta las caracteristicas de reproduccion medioambientales de cada hongo."
 );
 
@@ -210,9 +210,8 @@ const todosProductos = [
   granoCordiceps,
 ];
 
-let nombre = todosProductos[0].nombre;
-console.log(nombre);
-
-const placaPetri = todosProductos.filter((Producto) =>
-  Producto.tipoDeProducto.includes("Placas Petri")
-);
+const placaPetri = [petriGanoderma, petriHericium, petriCordiceps];
+const grainSpawn = [granoGanoderma, granoHericium, granoCordiceps];
+const lc = [lcGanoderma, lcHericium, lcCordiceps];
+const setas = [setaGanoderma, setaHericium, setaCordiceps];
+const alcoholaturas = [tinturaGanoderma, tinturaHericium, tinturaCordiceps];

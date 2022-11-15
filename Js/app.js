@@ -3,20 +3,12 @@ const carrito = [];
 const ordenadoCantidad = [];
 
 //Funciones //
-const nombreTitulo = (nombreTitulo) => {
-  for (i = 0; i < nombreTitulo.length; i++) {
-    nombreTitulo[i].nombre;
-  }
-};
-
-nombreTitulo(todosProductos);
-
-console.log(nombreTitulo);
 
 // Renderizacion de Productos //
 const Propagacion = document.querySelector("#Propagacion");
+const Consumibles = document.querySelector("#Consumibles");
 
-placaPetri.forEach((producto) => {
+alcoholaturas.forEach((producto5) => {
   const cardProductoNuevo = document.createElement("div");
   cardProductoNuevo.className = "card mb-3";
   cardProductoNuevo.setAttribute("style", "max-width: 100%");
@@ -25,26 +17,15 @@ placaPetri.forEach((producto) => {
         <div class="row g-0">
             <div class="col-md-4 align-self-center">
               <img
-                src="../assets/img/placa petri 1.jpg"
+                src="${producto5.imagen}"
                 class="img-fluid"
-                alt="Placa Petri"
+                alt="${producto5.presentacion} de ${producto5.nombre}"
               />
             </div>
             <div class="col-md-8">
               <div class="card-body">
-                <h5 class="card-title text-center">Placas Petri de ${nombreTitulo(
-                  placaPetri
-                )} </h5>
-                <p class="card-text">
-                  Como una novedosa tecnica de aislamiento, depuración y
-                  conservacion de cepas, tenemos disponibilidad de Placas petri
-                  de 90 x 10 (vidrio de borosilicato o plastico) con base
-                  gelificadas de PDA (Potatoe - Dextrose - Agar) con muchisimas
-                  variedades. Las placas se entregan 100% colonizadas; es por
-                  ello que los pedidos deben solicitarse con una anticipacion no
-                  menor a 10 dias habiles. Todos nuestros elementos de
-                  propagación cumplen con las mas estrictas normas de asepsia
-                  para asegurar el exito en todos tus cultivos.
+                <h5 class="card-title text-center">${producto5.tipoDeProducto} de ${producto5.nombre}</h5>
+                <p class="card-text"> ${producto5.descripcion}
                 </p>
                 <div class="botonCompra">
                   <button>Agregar al carrito</button>
@@ -55,32 +36,24 @@ placaPetri.forEach((producto) => {
         </div>`;
   Propagacion.append(cardProductoNuevo);
 });
-
-/*       <div class="propagacion">
-        <h4>Propagacion y Reproduccion Micelial</h4>
-
-        <div data-aos="fade-right" class="card mb-3" style="max-width: 100%">
-          <div class="row g-0">
+setas.forEach((producto4) => {
+  const cardProductoNuevo = document.createElement("div");
+  cardProductoNuevo.className = "card mb-3";
+  cardProductoNuevo.setAttribute("style", "max-width: 100%");
+  cardProductoNuevo.setAttribute("data-aos", "fade-right");
+  cardProductoNuevo.innerHTML = `
+        <div class="row g-0">
             <div class="col-md-4 align-self-center">
               <img
-                src="../assets/img/placa petri 1.jpg"
+                src="${producto4.imagen}"
                 class="img-fluid"
-                alt="Placa Petri"
+                alt="${producto4.presentacion} de ${producto4.nombre}"
               />
             </div>
             <div class="col-md-8">
               <div class="card-body">
-                <h5 class="card-title text-center">Placas Petri</h5>
-                <p class="card-text">
-                  Como una novedosa tecnica de aislamiento, depuración y
-                  conservacion de cepas, tenemos disponibilidad de Placas petri
-                  de 90 x 10 (vidrio de borosilicato o plastico) con base
-                  gelificadas de PDA (Potatoe - Dextrose - Agar) con muchisimas
-                  variedades. Las placas se entregan 100% colonizadas; es por
-                  ello que los pedidos deben solicitarse con una anticipacion no
-                  menor a 10 dias habiles. Todos nuestros elementos de
-                  propagación cumplen con las mas estrictas normas de asepsia
-                  para asegurar el exito en todos tus cultivos.
+                <h5 class="card-title text-center">${producto4.tipoDeProducto} de ${producto4.nombre}</h5>
+                <p class="card-text"> ${producto4.descripcion}
                 </p>
                 <div class="botonCompra">
                   <button>Agregar al carrito</button>
@@ -88,17 +61,93 @@ placaPetri.forEach((producto) => {
               </div>
             </div>
           </div>
-        </div>
-      </div>
- */
-// row g-0 ----> nombre de las class de las cards
-//col-md-8 ----> nombre de la clase del innertext de la descripcion (incluye el titulo)
-
-//const cards = document.getElementsByClassName("row g-0");
-//console.log(cards);
-
-//const innerTextCard = document.getElementsByClassName("col-md-8");
-//console.log(innerTextCard);
+        </div>`;
+  Propagacion.append(cardProductoNuevo);
+});
+lc.forEach((producto3) => {
+  const cardProductoNuevo = document.createElement("div");
+  cardProductoNuevo.className = "card mb-3";
+  cardProductoNuevo.setAttribute("style", "max-width: 100%");
+  cardProductoNuevo.setAttribute("data-aos", "fade-right");
+  cardProductoNuevo.innerHTML = `
+        <div class="row g-0">
+            <div class="col-md-4 align-self-center">
+              <img
+                src="${producto3.imagen}"
+                class="img-fluid"
+                alt="${producto3.presentacion} de ${producto3.nombre}"
+              />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title text-center">${producto3.tipoDeProducto} de ${producto3.nombre}</h5>
+                <p class="card-text"> ${producto3.descripcion}
+                </p>
+                <div class="botonCompra">
+                  <button>Agregar al carrito</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>`;
+  Propagacion.append(cardProductoNuevo);
+});
+grainSpawn.forEach((producto2) => {
+  const cardProductoNuevo = document.createElement("div");
+  cardProductoNuevo.className = "card mb-3";
+  cardProductoNuevo.setAttribute("style", "max-width: 100%");
+  cardProductoNuevo.setAttribute("data-aos", "fade-right");
+  cardProductoNuevo.innerHTML = `
+        <div class="row g-0">
+            <div class="col-md-4 align-self-center">
+              <img
+                src="${producto2.imagen}"
+                class="img-fluid"
+                alt="${producto2.presentacion} de ${producto2.nombre}"
+              />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title text-center">${producto2.tipoDeProducto} de ${producto2.nombre}</h5>
+                <p class="card-text"> ${producto2.descripcion}
+                </p>
+                <div class="botonCompra">
+                  <button>Agregar al carrito</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>`;
+  Propagacion.append(cardProductoNuevo);
+});
+placaPetri.forEach((producto) => {
+  const cardProductoNuevo = document.createElement("div");
+  cardProductoNuevo.className = "card mb-3";
+  cardProductoNuevo.setAttribute("style", "max-width: 100%");
+  cardProductoNuevo.setAttribute("data-aos", "fade-right");
+  cardProductoNuevo.innerHTML = `
+        <div class="row g-0">
+            <div class="col-md-4 align-self-center">
+              <img
+                src="${producto.imagen}"
+                class="img-fluid"
+                alt="${producto.presentacion} de ${producto.nombre}"
+              />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title text-center">${producto.tipoDeProducto} de ${producto.nombre}</h5>
+                <p class="card-text"> ${producto.descripcion}
+                </p>
+                <div class="botonCompra">
+                  <button>Agregar al carrito</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>`;
+  Propagacion.append(cardProductoNuevo);
+});
 
 /* 
 // función para listar el array con productos cargados
