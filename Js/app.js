@@ -5,8 +5,10 @@ const ordenadoCantidad = [];
 //QUERY SELECTORS GENERALES
 const searchBarInput = document.querySelector("#searchBarInput");
 const searchBarButton = document.querySelector("#searchBarButton");
+const verCarritoButton = document.querySelector("#verCarritoButton");
 const Propagacion = document.querySelector("#Propagacion");
 const Consumibles = document.querySelector("#Consumibles");
+const contenedorCarrito = document.querySelector("#contenedorCarrito");
 
 //FUNCIONES //
 
@@ -165,18 +167,10 @@ const renderizacionDeProductos = () => {
 
 //FUNCION: Agregar al Carrito //
 
-const agregarAlCarrito = (e) => {
-  const idProductoElegido = e.target.getAttribute("data-id");
-  const productoSeleccionadoAlCarrito = todosProductos.find(
-    (producto) => producto.identificador == idProductoElegido
-  );
-  carrito.push(productoSeleccionadoAlCarrito);
-  console.log(carrito);
-  renderizarCarrito();
-};
-
 const renderizarCarrito = () => {
-  carrito.forEach((producto) => {
+  const carritoJS = JSON.parse(localStorage.getItem(carritoToLocalStorage()));
+  console.log(carritoJS);
+  carritoJS.forEach((producto) => {
     const productoDelCarrito = document.createElement("div");
     productoDelCarrito.classList.add("card");
     productoDelCarrito.classList.add("mb-3");
@@ -199,8 +193,23 @@ const renderizarCarrito = () => {
           </div>
         </div>`;
   });
-  const contenedorCarrito = document.querySelector("#contenedorCarrito");
+
   contenedorCarrito.append(productoDelCarrito);
+};
+
+const agregarAlCarrito = (e) => {
+  const idProductoElegido = e.target.getAttribute("data-id");
+  const productoSeleccionadoAlCarrito = todosProductos.find(
+    (producto) => producto.identificador == idProductoElegido
+  );
+  carrito.push(productoSeleccionadoAlCarrito);
+  console.log(carrito);
+  renderizarCarrito();
+};
+
+const carritoToLocalStorage = () => {
+  const carritoJSON = JSON.stringify(carrito);
+  localStorage.setItem("carrito", carritoJSON);
 };
 
 // EVENT LISTENERS
@@ -208,6 +217,7 @@ const renderizarCarrito = () => {
 searchBarButton.addEventListener("click", () => {
   console.log(searchBarInput.value);
 });
+verCarritoButton.addEventListener("click", carritoToLocalStorage);
 
 //EJECUCIONES//
 renderizacionDeProductos();
