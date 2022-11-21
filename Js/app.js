@@ -1,5 +1,5 @@
 // VARIABLES
-const carrito = [];
+const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 const ordenadoCantidad = [];
 
 //QUERY SELECTORS GENERALES
@@ -168,9 +168,7 @@ const renderizacionDeProductos = () => {
 //FUNCION: Agregar al Carrito //
 
 const renderizarCarrito = () => {
-  const carritoJS = JSON.parse(localStorage.getItem(carritoToLocalStorage()));
-  console.log(carritoJS);
-  carritoJS.forEach((producto) => {
+  carrito.forEach((producto) => {
     const productoDelCarrito = document.createElement("div");
     productoDelCarrito.classList.add("card");
     productoDelCarrito.classList.add("mb-3");
@@ -217,6 +215,7 @@ const carritoToLocalStorage = () => {
 searchBarButton.addEventListener("click", () => {
   console.log(searchBarInput.value);
 });
+
 verCarritoButton.addEventListener("click", carritoToLocalStorage);
 
 //EJECUCIONES//
