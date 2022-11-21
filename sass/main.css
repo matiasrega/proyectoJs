@@ -172,7 +172,7 @@ a:active {
   padding-bottom: 1rem;
 }
 
-.mainProductos, .mainContacto, .mainHongos, .mainInvestigacion {
+.mainProductos, .mainCarrito, .mainContacto, .mainHongos, .mainInvestigacion {
   padding: 1rem 3rem 3rem 3rem;
   background-image: url(../assets/img/fondo\ fungi\ -\ opaco.jpg);
 }
@@ -262,7 +262,7 @@ textarea:focus {
   opacity: 0.5;
 }
 
-.mainProductos p, .mainInvestigacion p, .mainHongos p, .mainContacto p {
+.mainProductos p, .mainInvestigacion p, .mainHongos p, .mainContacto p, .mainCarrito p {
   opacity: 1 !important;
 }
 
@@ -513,7 +513,7 @@ textarea:focus {
   top: 45%;
 }
 
-.mainProductos h4, .mainInvestigacion h4, .mainHongos h4, .mainContacto h4 {
+.mainProductos h4, .mainInvestigacion h4, .mainHongos h4, .mainContacto h4, .mainCarrito h4 {
   text-align: center;
   font-weight: bolder;
 }
@@ -561,7 +561,7 @@ textarea:focus {
   .mainInvestigacion {
     padding: 0px;
   }
-  .mainProductos, .mainInvestigacion, .mainHongos, .mainContacto {
+  .mainProductos, .mainInvestigacion, .mainHongos, .mainContacto, .mainCarrito {
     padding: 0px;
   }
   .indice {

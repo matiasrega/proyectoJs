@@ -141,6 +141,11 @@ a:active {
   @extend .mainProductos;
 }
 
+.mainCarrito {
+@extend .mainProductos;
+
+}
+
 .formulario {
   display: flex;
   justify-content: space-evenly;

@@ -9,21 +9,49 @@ const Propagacion = document.querySelector("#Propagacion");
 const Consumibles = document.querySelector("#Consumibles");
 
 //Agregar al Carrito //
-//function agregarAlCarrito ()=>
 
 //FUNCIONES //
 
+//FUNCION: Agregar al Carrito //
 const renderizarCarrito = () => {
-  carrito.forEach((producto) => {});
+  carrito.forEach((producto) => {
+    const productoDelCarrito = document.createElement("div");
+    productoDelCarrito.classList.add("card");
+    productoDelCarrito.classList.add("mb-3");
+    productoDelCarrito.setAttribute("style", "max-width: 100%");
+    productoDelCarrito.setAttribute("data-aos", "fade-right");
+    productoDelCarrito.innerHTML = `
+        <div class="row g-0">
+            <div class="col-md-4 align-self-center">
+              <img
+                src="${producto.imagen}"
+                class="img-fluid"
+                alt="${producto.presentacion} de ${producto.nombre}"
+              />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title text-center">${producto.tipoDeProducto} de ${producto.nombre}</h5>
+                <p class="card-text"> ${producto.descripcion}
+                </p>
+                <div class="botonCompra">
+                  <button id="BotonCompra" data-id = "${producto.identificador}">Agregar al carrito</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>`;
+    const contenedorCarrito = document.querySelector("#contenedorCarrito");
+    contenedorCarrito.append(productoDelCarrito);
+  });
 };
 
-//FUNCION: Agregar al Carrito //
 const agregarAlCarrito = (e) => {
   const idProductoElegido = e.target.getAttribute("data-id");
-  const productoSeleccionadoCarrito = todosProductos.find(
+  const productoSeleccionadoAlCarrito = todosProductos.find(
     (producto) => producto.identificador == idProductoElegido
   );
-  carrito.push(productoSeleccionadoCarrito);
+  carrito.push(productoSeleccionadoAlCarrito);
   console.log(carrito);
   renderizarCarrito();
 };
