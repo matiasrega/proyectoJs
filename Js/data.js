@@ -27,13 +27,15 @@ class Producto {
   }
 }
 
-// creación de un identificador aleatorio automático
-const creoID = () => parseInt(Math.random() * 10000);
-
 // datos del producto
+/* const creoID = () => {
+  for (i = 1000; i < Producto.length; i++) {
+    Producto.identificador = [i];
+  }
+};  */
 
 const tinturaGanoderma = new Producto(
-  creoID(),
+  "000001",
   "Ganoderma Lucidum",
   "Tintura",
   "alcoholaturas",
@@ -42,8 +44,9 @@ const tinturaGanoderma = new Producto(
   "../assets/img/goteros.jpg",
   "Otra manera de incoporar la nutrición del reino fungi es a través de nuestras extracciones alcoholicas que permiten concentrar la mayor parte de los componentes medicinales sin necesidad de consumir cuerpos fructiferos de la variedad deseada. Cada alcoholatura se trabaja en un proceso de extracción a alta presión, dando como resultado un suplemento de alta calidad y de prolongada durabilidad. Nuestras destilaciones se realizan integramente en alcohol de cereal apto para consumo humano y se entregan en presentacion es de 30ml, 50ML y 100ML."
 );
+
 const tinturaHericium = new Producto(
-  creoID(),
+  "000002",
   "Hericium Erinaceum",
   "Tintura",
   "alcoholaturas",
@@ -53,7 +56,7 @@ const tinturaHericium = new Producto(
   "Otra manera de incoporar la nutrición del reino fungi es a través de nuestras extracciones alcoholicas que permiten concentrar la mayor parte de los componentes medicinales sin necesidad de consumir cuerpos fructiferos de la variedad deseada. Cada alcoholatura se trabaja en un proceso de extracción a alta presión, dando como resultado un suplemento de alta calidad y de prolongada durabilidad. Nuestras destilaciones se realizan integramente en alcohol de cereal apto para consumo humano y se entregan en presentacion es de 30ml, 50ML y 100ML."
 );
 const tinturaCordiceps = new Producto(
-  creoID(),
+  "000003",
   "Cordiceps Militaris",
   "Tintura",
   "alcoholaturas",
@@ -64,7 +67,7 @@ const tinturaCordiceps = new Producto(
 );
 
 const setaGanoderma = new Producto(
-  creoID(),
+  "000004",
   "Ganoderma Lucidum",
   "Setas",
   "comestibles",
@@ -75,7 +78,7 @@ const setaGanoderma = new Producto(
 );
 
 const setaHericium = new Producto(
-  creoID(),
+  "000005",
   "Hericium Erinaceum",
   "Setas",
   "comestibles",
@@ -85,7 +88,7 @@ const setaHericium = new Producto(
   "Parte de el aporte medicinal de este maravilloso reino fungi puede ser incorporado a través de las deliciosas setas gourmet. Cada cosecha es realizada bajo los mas altos estandares de asepsia, asegurando una correcta recolección y guardado para su posterior consumo. Las setas pueden consumirse frescas o deshidratadas en una incontable variedad de recetas y formatos. Mediante un cuidado proceso de secado a baja temperatura y escasa exposición a la luz solar, nuestras setas se destacan por mantener buena textura y conservar los aromas propios de cada variedad."
 );
 const setaCordiceps = new Producto(
-  creoID(),
+  "000006",
   "Cordiceps Militaris",
   "Setas",
   "comestibles",
@@ -96,7 +99,7 @@ const setaCordiceps = new Producto(
 );
 
 const lcGanoderma = new Producto(
-  creoID(),
+  "000007",
   "Ganoderma Lucidum",
   "Cultura Liquida",
   "propagacion",
@@ -107,7 +110,7 @@ const lcGanoderma = new Producto(
 );
 
 const lcHericium = new Producto(
-  creoID(),
+  "000008",
   "Hericium Erinaceum",
   "Cultura Liquida",
   "propagacion",
@@ -117,7 +120,7 @@ const lcHericium = new Producto(
   "La Liquid Culture (Cultura Liquida) es uno de los medios de reproducción miceliar de mayor popularidad por la baja dificultad tanto en la forma de trabajo como en su forma de almacenaje y guardado. Consiste en una solucion nutritiva que permite generar una 'nube de micelio' totalmente funcional, apto para su inoculacion a grano o su depuración o conservacion en placa petri. Con una vida util superior a los 3 meses (en condiciones optimas) este metodo de propagación es sumamente rendidor si se lo trabaja de manera adecuada y permite almacenar en poco espacio muchas variedades de hongos. Nuestra cultura liquida se entrega en jeringas plasticas esterilizadas de 10 ml c/u. cerradas en bolsas esterilizadas los luz UV."
 );
 const lcCordiceps = new Producto(
-  creoID(),
+  "000009",
   "Cordiceps Militaris",
   "Cultura Liquida",
   "propagacion",
@@ -128,7 +131,7 @@ const lcCordiceps = new Producto(
 );
 
 const petriGanoderma = new Producto(
-  creoID(),
+  "000010",
   "Ganoderma Lucidum",
   "Placas Petri",
   "propagacion",
@@ -139,7 +142,7 @@ const petriGanoderma = new Producto(
 );
 
 const petriHericium = new Producto(
-  creoID(),
+  "000011",
   "Hericium Erinaceum",
   "Placas Petri",
   "propagacion",
@@ -150,7 +153,7 @@ const petriHericium = new Producto(
 );
 
 const petriCordiceps = new Producto(
-  creoID(),
+  "000012",
   "Cordiceps Militaris",
   "Placas Petri",
   "propagacion",
@@ -161,7 +164,7 @@ const petriCordiceps = new Producto(
 );
 
 const granoGanoderma = new Producto(
-  creoID(),
+  "000013",
   "Ganoderma Lucidum",
   "Grain Spawn",
   "propagacion",
@@ -172,7 +175,7 @@ const granoGanoderma = new Producto(
 );
 
 const granoHericium = new Producto(
-  creoID(),
+  "000014",
   "Hericium Erinaceum",
   "Grain Spawn",
   "propagacion",
@@ -182,7 +185,7 @@ const granoHericium = new Producto(
   "Conocida como una de las tecnicas mas antiguas en la reproduccion de micelio, presentamos el formato de propagación 'Grain Spawn' que consiste en bolsas de polipropileno con grano inoculado y colonizado (puede variar dependiendo la disponibilidad del stock al momento de la compra) listo para ser sometido a un proceso de frutificación o disponible para realizar una nueva propagacion sobre otro sustrato. Cada bolsa de sustrato esta realizado en base a un minucioso estudio y pruebas de adaptabilidad de cada cepa entregando, unicamente, un producto de calidad y alto valor nutricional teniendo en cuenta las caracteristicas de reproduccion medioambientales de cada hongo."
 );
 const granoCordiceps = new Producto(
-  creoID(),
+  "000015",
   "Cordiceps Militaris",
   "Grain Spawn",
   "propagacion",
