@@ -168,6 +168,7 @@ const renderizacionDeProductos = () => {
 //FUNCION: Agregar al Carrito //
 
 const renderizarCarrito = () => {
+  contenedorCarrito.innerHTML = "";
   carrito.forEach((producto) => {
     const productoDelCarrito = document.createElement("div");
     productoDelCarrito.classList.add("card");
@@ -190,7 +191,6 @@ const renderizarCarrito = () => {
             </div>
           </div>
         </div>`;
-
     contenedorCarrito.append(productoDelCarrito);
   });
 };
@@ -200,10 +200,10 @@ const agregarAlCarrito = (e) => {
   const productoSeleccionadoAlCarrito = todosProductos.find(
     (producto) => producto.identificador == idProductoElegido
   );
+
   carrito.push(productoSeleccionadoAlCarrito);
   localStorage.setItem("carrito", JSON.stringify(carrito));
   console.log(carrito);
-  // renderizarCarrito();
 };
 
 const carritoToLocalStorage = () => {};
@@ -214,7 +214,7 @@ searchBarButton.addEventListener("click", () => {
   console.log(searchBarInput.value);
 });
 
-verCarritoButton.addEventListener("click", carritoToLocalStorage());
+irACarritoButton.addEventListener("click", renderizarCarrito());
 
 //EJECUCIONES//
 renderizacionDeProductos();
