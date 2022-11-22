@@ -5,7 +5,7 @@ const ordenadoCantidad = [];
 //QUERY SELECTORS GENERALES
 const searchBarInput = document.querySelector("#searchBarInput");
 const searchBarButton = document.querySelector("#searchBarButton");
-const verCarritoButton = document.querySelector("#verCarritoButton");
+const irACarritoButton = document.querySelector("#irACarritoButton");
 const Propagacion = document.querySelector("#Propagacion");
 const Consumibles = document.querySelector("#Consumibles");
 const contenedorCarrito = document.querySelector("#contenedorCarrito");
@@ -177,16 +177,18 @@ const renderizarCarrito = () => {
     productoDelCarrito.setAttribute("data-aos", "fade-right");
     productoDelCarrito.innerHTML = `
         <div class="row g-0">
-            <div class="col-md-4 align-self-center">
+            <div class="col-sm-2 align-self-center">
               <img
                 src="${producto.imagen}"
                 class="img-fluid"
                 alt="${producto.presentacion} de ${producto.nombre}"
               />
             </div>
-            <div class="col-md-8">
+            <div class="col-sm-8">
               <div class="card-body">
-                <h5 class="card-title text-center">${producto.tipoDeProducto} de ${producto.nombre}</h5>
+                <h5 class="card-title text-center">Has agregado a tu carrito el siguiente producto</h5>
+                 <p class="card-text"> ${producto.tipoDeProducto} de ${producto.nombre}: $${producto.importe}
+                </p>
               </div>
             </div>
           </div>
