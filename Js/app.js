@@ -190,9 +190,9 @@ const renderizarCarrito = () => {
             </div>
           </div>
         </div>`;
-  });
 
-  contenedorCarrito.append(productoDelCarrito);
+    contenedorCarrito.append(productoDelCarrito);
+  });
 };
 
 const agregarAlCarrito = (e) => {
@@ -201,14 +201,12 @@ const agregarAlCarrito = (e) => {
     (producto) => producto.identificador == idProductoElegido
   );
   carrito.push(productoSeleccionadoAlCarrito);
+  localStorage.setItem("carrito", JSON.stringify(carrito));
   console.log(carrito);
-  renderizarCarrito();
+  // renderizarCarrito();
 };
 
-const carritoToLocalStorage = () => {
-  const carritoJSON = JSON.stringify(carrito);
-  localStorage.setItem("carrito", carritoJSON);
-};
+const carritoToLocalStorage = () => {};
 
 // EVENT LISTENERS
 
@@ -216,7 +214,7 @@ searchBarButton.addEventListener("click", () => {
   console.log(searchBarInput.value);
 });
 
-verCarritoButton.addEventListener("click", carritoToLocalStorage);
+verCarritoButton.addEventListener("click", carritoToLocalStorage());
 
 //EJECUCIONES//
 renderizacionDeProductos();
