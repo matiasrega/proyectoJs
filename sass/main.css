@@ -4,7 +4,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  text-decoration: none;
+  text-decoration: none !important;
   list-style-type: none;
   font-family: Kanit !important;
   /*google font*/
@@ -175,6 +175,31 @@ a:active {
 .mainProductos, .mainCarrito, .mainContacto, .mainHongos, .mainInvestigacion {
   padding: 1rem 3rem 3rem 3rem;
   background-image: url(../assets/img/fondo\ fungi\ -\ opaco.jpg);
+}
+
+.mainProductos .divEcomerce, .mainCarrito .divEcomerce, .mainContacto .divEcomerce, .mainHongos .divEcomerce, .mainInvestigacion .divEcomerce {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mainProductos .divCarrito, .mainCarrito .divCarrito, .mainContacto .divCarrito, .mainHongos .divCarrito, .mainInvestigacion .divCarrito {
+  display: flex;
+  flex-direction: column-reverse;
+  width: 15rem;
+}
+.mainProductos .divCarrito a, .mainCarrito .divCarrito a, .mainContacto .divCarrito a, .mainHongos .divCarrito a, .mainInvestigacion .divCarrito a {
+  margin: 0 auto;
+  justify-items: center;
+  align-items: center;
+}
+.mainProductos .divCarrito img, .mainCarrito .divCarrito img, .mainContacto .divCarrito img, .mainHongos .divCarrito img, .mainInvestigacion .divCarrito img {
+  margin: 0 auto;
+  height: 5rem;
+  width: auto;
+}
+.mainProductos .divCarrito p, .mainCarrito .divCarrito p, .mainContacto .divCarrito p, .mainHongos .divCarrito p, .mainInvestigacion .divCarrito p {
+  text-align: center;
+  margin: 0;
 }
 
 .formulario {

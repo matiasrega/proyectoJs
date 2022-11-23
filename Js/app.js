@@ -1,4 +1,4 @@
-// VARIABLES
+//VARIABLES
 const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 const ordenadoCantidad = [];
 
@@ -8,7 +8,7 @@ const searchBarButton = document.querySelector("#searchBarButton");
 const irACarritoButton = document.querySelector("#irACarritoButton");
 const Propagacion = document.querySelector("#Propagacion");
 const Consumibles = document.querySelector("#Consumibles");
-const contenedorCarrito = document.querySelector("#contenedorCarrito");
+const ecomerceDiv = document.querySelector("#ecomerceDiv");
 
 //FUNCIONES //
 
@@ -31,7 +31,7 @@ const renderizacionDeProductos = () => {
             </div>
             <div class="col-md-8">
               <div class="card-body">
-                <h5 class="card-title text-center">${producto.tipoDeProducto} de ${producto.nombre}</h5>
+                <h5 class="card-title text-center">${producto.tipoDeProducto} de ${producto.nombre}: $${producto.importe}</h5>
                 <p class="card-text"> ${producto.descripcion}
                 </p>
                 <div class="botonCompra">
@@ -60,11 +60,11 @@ const renderizacionDeProductos = () => {
             </div>
             <div class="col-md-8">
               <div class="card-body">
-                <h5 class="card-title text-center">${producto.tipoDeProducto} de ${producto.nombre}</h5>
+                <h5 class="card-title text-center">${producto.tipoDeProducto} de ${producto.nombre}: $${producto.importe}</h5>
                 <p class="card-text"> ${producto.descripcion}
                 </p>
                 <div class="botonCompra">
-                <button id="BotonCompra" data-id = "${producto.identificador}">Agregar al carrito</button>
+                  <button id="BotonCompra" data-id = "${producto.identificador}">Agregar al carrito</button>
                 </div>
               </div>
             </div>
@@ -89,7 +89,7 @@ const renderizacionDeProductos = () => {
             </div>
             <div class="col-md-8">
               <div class="card-body">
-                <h5 class="card-title text-center">${producto.tipoDeProducto} de ${producto.nombre}</h5>
+                <h5 class="card-title text-center">${producto.tipoDeProducto} de ${producto.nombre}: $${producto.importe}</h5>
                 <p class="card-text"> ${producto.descripcion}
                 </p>
                 <div class="botonCompra">
@@ -118,7 +118,7 @@ const renderizacionDeProductos = () => {
             </div>
             <div class="col-md-8">
               <div class="card-body">
-                <h5 class="card-title text-center">${producto.tipoDeProducto} de ${producto.nombre}</h5>
+                <h5 class="card-title text-center">${producto.tipoDeProducto} de ${producto.nombre}: $${producto.importe}</h5>
                 <p class="card-text"> ${producto.descripcion}
                 </p>
                 <div class="botonCompra">
@@ -147,11 +147,11 @@ const renderizacionDeProductos = () => {
             </div>
             <div class="col-md-8">
               <div class="card-body">
-                <h5 class="card-title text-center">${producto.tipoDeProducto} de ${producto.nombre}</h5>
+                <h5 class="card-title text-center">${producto.tipoDeProducto} de ${producto.nombre}: $${producto.importe}</h5>
                 <p class="card-text"> ${producto.descripcion}
                 </p>
                 <div class="botonCompra">
-                 <button id="BotonCompra" data-id = "${producto.identificador}">Agregar al carrito</button>
+                  <button id="BotonCompra" data-id = "${producto.identificador}">Agregar al carrito</button>
                 </div>
               </div>
             </div>
@@ -162,38 +162,6 @@ const renderizacionDeProductos = () => {
   const BotonCompra = document.querySelectorAll("#BotonCompra");
   BotonCompra.forEach((boton) => {
     boton.addEventListener("click", agregarAlCarrito);
-  });
-};
-
-//FUNCION: Agregar al Carrito //
-
-const renderizarCarrito = () => {
-  contenedorCarrito.innerHTML = "";
-  carrito.forEach((producto) => {
-    const productoDelCarrito = document.createElement("div");
-    productoDelCarrito.classList.add("card");
-    productoDelCarrito.classList.add("mb-3");
-    productoDelCarrito.setAttribute("style", "max-width: 100%");
-    productoDelCarrito.setAttribute("data-aos", "fade-right");
-    productoDelCarrito.innerHTML = `
-        <div class="row g-0">
-            <div class="col-sm-2 align-self-center">
-              <img
-                src="${producto.imagen}"
-                class="img-fluid"
-                alt="${producto.presentacion} de ${producto.nombre}"
-              />
-            </div>
-            <div class="col-sm-8">
-              <div class="card-body">
-                <h5 class="card-title text-center">Has agregado a tu carrito el siguiente producto</h5>
-                 <p class="card-text"> ${producto.tipoDeProducto} de ${producto.nombre}: $${producto.importe}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>`;
-    contenedorCarrito.append(productoDelCarrito);
   });
 };
 
@@ -208,24 +176,29 @@ const agregarAlCarrito = (e) => {
   console.log(carrito);
 };
 
-const carritoToLocalStorage = () => {};
+const renderizarImagenCarrito = () => {
+  if (JSON.parse(localStorage.getItem("carrito")) != []) {
+    const carritoVisible = document.createElement("div");
+    carritoVisible.classList.add("divCarrito");
+    carritoVisible.innerHTML = `<a href="../page/carritoDeCompra.html"><img src="../assets/img/shopping-cart.svg" alt="shopping-cart"></a>
+        <p>IR AL CARRITO DE COMPRAS</p>
+        </div>`;
+    ecomerceDiv.append(carritoVisible);
+  }
+};
 
 // EVENT LISTENERS
 
-searchBarButton.addEventListener("click", () => {
+/* searchBarButton.addEventListener("click", () => {
   console.log(searchBarInput.value);
-});
-
-irACarritoButton.addEventListener("click", renderizarCarrito());
+}); */
 
 //EJECUCIONES//
 renderizacionDeProductos();
+renderizarImagenCarrito();
 
 /* 
-// función para listar el array con productos cargados
-function listarProductos() {
-  console.table(productos);
-}
+
 
 // ordenar listado por cantidad
 function ordenar() {

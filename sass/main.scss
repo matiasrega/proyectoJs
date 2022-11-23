@@ -5,7 +5,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  text-decoration: none;
+  text-decoration: none !important;
   list-style-type: none;
   font-family: Kanit !important;
   /*google font*/
@@ -129,6 +129,33 @@ a:active {
   background-image: url(../assets/img/fondo\ fungi\ -\ opaco.jpg);
 }
 
+.mainProductos {
+  .divEcomerce {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .divCarrito {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 15rem;
+    a {
+      margin: 0 auto;
+      justify-items: center;
+      align-items: center;
+    }
+    img {
+      margin: 0 auto;
+      height: 5rem;
+      width: auto;
+    }
+    p {
+      text-align: center;
+      margin: 0;
+    }
+  }
+}
+
 .mainInvestigacion {
   @extend .mainProductos;
 }
@@ -142,8 +169,7 @@ a:active {
 }
 
 .mainCarrito {
-@extend .mainProductos;
-
+  @extend .mainProductos;
 }
 
 .formulario {
