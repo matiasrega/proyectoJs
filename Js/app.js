@@ -1,5 +1,5 @@
 //VARIABLES
-const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 const ordenadoCantidad = [];
 
 //QUERY SELECTORS GENERALES

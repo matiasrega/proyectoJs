@@ -1,10 +1,10 @@
 //VARIABLE DE VALIDACION
-const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 //QUERY SELECTORS GENERALES
 const contenedorCarrito = document.querySelector("#contenedorCarrito");
 
-//FUNCIONALIDAD DEL CARRITO: Agregar Y Renderizar al carrito //
+//FUNCIONALIDAD DEL CARRITO: Renderizar Carrito en HTML "CarritoDeCompra"//
 
 const renderizarCarrito = () => {
   contenedorCarrito.innerHTML = "";
@@ -28,12 +28,29 @@ const renderizarCarrito = () => {
                 <h5 class="card-title text-center">Has agregado a tu carrito el siguiente producto</h5>
                  <p class="card-text"> ${producto.tipoDeProducto} de ${producto.nombre}: $${producto.importe}
                 </p>
+                <div class="botonEliminar">
+                  <button id="BotonEliminar" data-id = "${producto.identificador}">Eliminar Producto</button>
+                </div>
               </div>
             </div>
           </div>
         </div>`;
     contenedorCarrito.append(productoDelCarrito);
   });
+  const BotonEliminar = document.querySelectorAll("#BotonEliminar");
+  BotonEliminar.forEach((boton) => {
+    boton.addEventListener("click", EliminarDelCarrito);
+  });
+};
+
+const EliminarDelCarrito = (e) => {
+  const idProductoElegido = e.target.getAttribute("data-id");
+  carrito = carrito.filter(
+    (producto) => producto.identificador != idProductoElegido
+  );
+
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+  renderizarCarrito();
 };
 
 //EJECUCIONES //
