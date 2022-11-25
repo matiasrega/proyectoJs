@@ -12,7 +12,7 @@ const ecomerceDiv = document.querySelector("#ecomerceDiv");
 
 //FUNCIONES //
 
-// FUNCION: Renderizacion de Productos //
+// FUNCION: Renderizacion de Productos  //
 const renderizacionDeProductos = () => {
   alcoholaturas.forEach((producto) => {
     const cardProductoNuevo = document.createElement("div");
@@ -165,6 +165,7 @@ const renderizacionDeProductos = () => {
   });
 };
 
+//Agrega al Carrito
 const agregarAlCarrito = (e) => {
   const idProductoElegido = e.target.getAttribute("data-id");
   const productoSeleccionadoAlCarrito = todosProductos.find(
@@ -176,15 +177,39 @@ const agregarAlCarrito = (e) => {
   console.log(carrito);
 };
 
-const renderizarImagenCarrito = () => {
-  if (JSON.parse(localStorage.getItem("carrito")) != []) {
+// Renderiza imagen de carrito para ir CarritodeCompra.HTML
+carritoVisible = () => {
+  const carritoVisible = document.createElement("div");
+  carritoVisible.classList.add("divCarrito");
+  carritoVisible.innerHTML = `<a href="../page/carritoDeCompra.html"><img src="../assets/img/shopping-cart.svg" alt="shopping-cart"></a>
+        <p>IR AL CARRITO DE COMPRAS</p>
+        </div>`;
+  ecomerceDiv.append(carritoVisible);
+};
+
+/* const renderizarImagenCarrito = () => {
+  if (carrito.length > 0) {
     const carritoVisible = document.createElement("div");
     carritoVisible.classList.add("divCarrito");
     carritoVisible.innerHTML = `<a href="../page/carritoDeCompra.html"><img src="../assets/img/shopping-cart.svg" alt="shopping-cart"></a>
         <p>IR AL CARRITO DE COMPRAS</p>
         </div>`;
     ecomerceDiv.append(carritoVisible);
+  } else {
+    return false;
   }
+}; */
+
+const renderizarImagenCarrito = () => {
+  return new Promise((renderiza, rechaza) => {
+    setTimeout(() => {
+      if (carrito.length > 0) {
+        renderiza(carritoVisible);
+      } else {
+        rechaza(`Error: No hay elementos en el carrito`);
+      }
+    }, 8000);
+  });
 };
 
 // EVENT LISTENERS
@@ -195,7 +220,15 @@ const renderizarImagenCarrito = () => {
 
 //EJECUCIONES//
 renderizacionDeProductos();
-renderizarImagenCarrito();
+setInterval(() => {
+  renderizarImagenCarrito()
+    .then((renderiza) => {
+      carritoVisible();
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}, 8000);
 
 /* 
 
