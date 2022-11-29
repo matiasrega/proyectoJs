@@ -1,6 +1,8 @@
 // definición de la clase Producto
 
-const IVA = 1.21;
+//LEIDO Y REEMPLAZADO DESDE DATA.JSON
+
+/* const IVA = 1.21;
 
 class Producto {
   constructor(
@@ -28,11 +30,11 @@ class Producto {
 }
 
 // datos del producto
-/* const creoID = () => {
+ const creoID = () => {
   for (i = 1000; i < Producto.length; i++) {
     Producto.identificador = [i];
   }
-};  */
+};  
 
 const tinturaGanoderma = new Producto(
   "000001",
@@ -218,3 +220,4 @@ const grainSpawn = [granoGanoderma, granoHericium, granoCordiceps];
 const lc = [lcGanoderma, lcHericium, lcCordiceps];
 const setas = [setaGanoderma, setaHericium, setaCordiceps];
 const alcoholaturas = [tinturaGanoderma, tinturaHericium, tinturaCordiceps];
+ */

@@ -4,6 +4,7 @@ let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 //QUERY SELECTORS GENERALES
 const contenedorCarrito = document.querySelector("#contenedorCarrito");
 
+//FUNCIONES
 //FUNCIONALIDAD DEL CARRITO: Renderizar Carrito en HTML "CarritoDeCompra"//
 
 const renderizarCarrito = () => {
@@ -53,5 +54,29 @@ const EliminarDelCarrito = (e) => {
   renderizarCarrito();
 };
 
+//RENDERIZACION HTML CON CARRITO SIN PRODUCTOS
+
+const carritoVacio = () => {
+  const mensajeCarritoVacio = document.createElement("div");
+  mensajeCarritoVacio.innerHTML = `
+    <div>
+      <p>¡TU CARRITO ESTA VACIO!
+      ¡VOLVE ATRÁS QUE SEGURO ENCONTRARÁS ALGUN PRODUCTO INTERESANTE!</p>
+    </div>`;
+  contenedorCarrito.append(mensajeCarritoVacio);
+};
+
+if (carrito.length > 0) {
+  renderizarCarrito();
+} else {
+  carritoVacio();
+}
+
+//Función para actualizar cada 5 segundos(5000 milisegundos)
+const actualizarPagina = () => {
+  location.reload();
+};
+setInterval(actualizarPagina, 5000);
+
 //EJECUCIONES //
-renderizarCarrito();
+//renderizarCarrito();

@@ -51,6 +51,36 @@ a:active {
   width: 50%;
 }
 
+.divSearchBar {
+  position: absolute;
+  left: 15%;
+}
+.divSearchBar input {
+  width: 0px;
+  height: 40px;
+  border-radius: 25px;
+  padding: 0 20px;
+  line-height: 10px;
+  font-size: 20px;
+  transition: all 0.5s ease-in-out;
+}
+.divSearchBar .btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 55px;
+  height: auto;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 0;
+  justify-items: center;
+  text-align: center;
+}
+
+.divSearchBar:hover input {
+  width: 300px;
+}
+
 .tooltip1 {
   position: relative;
 }
