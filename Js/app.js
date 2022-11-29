@@ -98,7 +98,20 @@ const renderizarImagenCarrito = () => {
 
 // EVENT LISTENERS
 
+// BARRA Y LUPA DE BUSQUEDA DE PRODUCTOS
 searchBarButton.addEventListener("click", filtroBusqueda);
+//Busqueda con tecla "ENTER"
+searchBarInput.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    filtroBusqueda();
+  }
+});
+//Salida y borrado de campo con tecla "Escape"
+searchBarInput.addEventListener("keydown", (e) => {
+  if (e.which == 27) {
+    searchBarInput.value = "";
+  }
+});
 
 /* searchBarButton.addEventListener("click", () => {
   console.log(searchBarInput.value);

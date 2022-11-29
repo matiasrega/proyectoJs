@@ -81,6 +81,10 @@ a:active {
   width: 300px;
 }
 
+.divSearchBar:active {
+  display: block;
+}
+
 .tooltip1 {
   position: relative;
 }
