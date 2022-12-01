@@ -68,14 +68,53 @@ const agregarAlCarrito = (e) => {
 };
 
 // Funcion de Filtro Busqueda //
-const filtroBusqueda = (e) => {
-  const productoBuscado = document
+const filtroBusqueda = () => {
+  const inputProductoBuscado = document
     .getElementById("searchBarInput")
     .value.toLowerCase();
-  const productoBuscadofiltrado = todosProductos.filter(
-    (producto) => producto.tipoDeProducto.toLowerCase() == productoBuscado
+  const productofiltradoDelTotal = todosProductos.filter(
+    (producto) =>
+      producto.tipoDeProducto.includes(inputProductoBuscado.toLowerCase()) ||
+      producto.nombre.includes(inputProductoBuscado.toLowerCase()) ||
+      producto.familiaDeProducto.includes(inputProductoBuscado.toLowerCase()) ||
+      producto.presentacion.includes(inputProductoBuscado.toLowerCase()) ||
+      producto.descripcion.includes(inputProductoBuscado.toLowerCase())
   );
-  console.log(productoBuscadofiltrado);
+  Productos.innerHTML = "";
+  productofiltradoDelTotal.forEach((producto) => {
+    const cardProductoNuevo = document.createElement("div");
+    cardProductoNuevo.classList.add("card");
+    cardProductoNuevo.classList.add("mb-3");
+    cardProductoNuevo.setAttribute("style", "max-width: 100%");
+    cardProductoNuevo.setAttribute("data-aos", "fade-right");
+    cardProductoNuevo.innerHTML = `
+        <div class="row g-0">
+            <div class="col-md-4 align-self-center">
+              <img
+                src="${producto.imagen}"
+                class="img-fluid"
+                alt="${producto.presentacion} de ${producto.nombre}"
+              />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title text-center">${producto.tipoDeProducto} de ${producto.nombre}: $${producto.importe}</h5>
+                <p class="card-text"> ${producto.descripcion}
+                </p>
+                <div class="botonCompra">
+                  <button id="BotonCompra" data-id = "${producto.identificador}">Agregar al carrito</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>`;
+    Productos.append(cardProductoNuevo);
+  });
+  const BotonCompra = document.querySelectorAll("#BotonCompra");
+  BotonCompra.forEach((boton) => {
+    boton.addEventListener("click", agregarAlCarrito);
+    boton.addEventListener("click", actualizarPagina);
+  });
 };
 
 // Renderiza imagen de carrito para ir CarritodeCompra.HTML //
@@ -110,12 +149,10 @@ searchBarInput.addEventListener("keypress", (e) => {
 searchBarInput.addEventListener("keydown", (e) => {
   if (e.which == 27) {
     searchBarInput.value = "";
+    Productos.innerHTML = "";
+    renderizacionDeProductos();
   }
 });
-
-/* searchBarButton.addEventListener("click", () => {
-  console.log(searchBarInput.value);
-});*/
 
 //EJECUCIONES//
 fetch(`../Js/data.json`)

@@ -62,7 +62,7 @@ a:active {
   padding: 0 20px;
   line-height: 10px;
   font-size: 20px;
-  transition: all 0.5s ease-in-out;
+  transition: all 1s ease-in-out;
 }
 .divSearchBar .btn {
   position: absolute;
@@ -75,14 +75,19 @@ a:active {
   padding: 0;
   justify-items: center;
   text-align: center;
+  border-color: transparent;
+  border: 0px;
+}
+.divSearchBar .btn img {
+  border: 0px;
 }
 
 .divSearchBar:hover input {
   width: 300px;
 }
 
-.divSearchBar:active {
-  display: block;
+.btn:hover .btn img {
+  display: none;
 }
 
 .tooltip1 {
@@ -212,6 +217,7 @@ a:active {
 }
 
 .mainProductos .divEcomerce, .mainCarrito .divEcomerce, .mainContacto .divEcomerce, .mainHongos .divEcomerce, .mainInvestigacion .divEcomerce {
+  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
