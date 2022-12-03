@@ -9,6 +9,7 @@ const searchBarButton = document.querySelector("#searchBarButton");
 const irACarritoButton = document.querySelector("#irACarritoButton");
 const Productos = document.querySelector("#Productos");
 const ecomerceDiv = document.querySelector("#ecomerceDiv");
+const divCarrito = document.querySelector("#DivCarrito");
 
 //FUNCIONES //
 
@@ -46,13 +47,56 @@ const renderizacionDeProductos = () => {
   const BotonCompra = document.querySelectorAll("#BotonCompra");
   BotonCompra.forEach((boton) => {
     boton.addEventListener("click", agregarAlCarrito);
-    boton.addEventListener("click", actualizarPagina);
+    boton.addEventListener("click", sweetAlertPopA);
   });
 };
 
-// Actualiza pagina luego de seleccionar producto para mostrar Imagen de carrito si el LocalStorage tiene productos
-const actualizarPagina = () => {
-  location.reload();
+//SweetAlert al agregar al carrito
+const sweetAlertPopA = () => {
+  let timerInterval;
+  Swal.fire({
+    title: "Producto Agregado al carrito",
+    html: "",
+    timer: 500,
+    timerProgressBar: true,
+    didOpen: () => {
+      Swal.showLoading();
+      const b = Swal.getHtmlContainer().querySelector("b");
+      timerInterval = setInterval(() => {
+        b.textContent = Swal.getTimerLeft();
+      }, 100);
+    },
+    willClose: () => {
+      clearInterval(timerInterval);
+    },
+  }).then((result) => {
+    /* Read more about handling dismissals below */
+    if (result.dismiss === Swal.DismissReason.timer) {
+    }
+  });
+};
+//SweetAlert si el carrito esta vacio (No permite avanzar a CarritoDeCompra.HTML)
+const sweetAlertPopB = () => {
+  let timerInterval;
+  Swal.fire({
+    title: "Ups! ¡Tu carrito esta vacio!",
+    html: "Agrega Productos para poder visualizarlo",
+    timer: 2000,
+    timerProgressBar: true,
+    didOpen: () => {
+      Swal.showLoading();
+      const b = Swal.getHtmlContainer().querySelector("b");
+      timerInterval = setInterval(() => {
+        b.textContent = Swal.getTimerLeft();
+      }, 100);
+    },
+    willClose: () => {
+      clearInterval(timerInterval);
+    },
+  }).then((result) => {
+    if (result.dismiss === Swal.DismissReason.timer) {
+    }
+  });
 };
 
 //Agrega al Carrito
@@ -64,7 +108,6 @@ const agregarAlCarrito = (e) => {
 
   carrito.push(productoSeleccionadoAlCarrito);
   localStorage.setItem("carrito", JSON.stringify(carrito));
-  console.log(carrito);
 };
 
 // Funcion de Filtro Busqueda //
@@ -113,26 +156,8 @@ const filtroBusqueda = () => {
   const BotonCompra = document.querySelectorAll("#BotonCompra");
   BotonCompra.forEach((boton) => {
     boton.addEventListener("click", agregarAlCarrito);
-    boton.addEventListener("click", actualizarPagina);
+    boton.addEventListener("click", sweetAlertPopA);
   });
-};
-
-// Renderiza imagen de carrito para ir CarritodeCompra.HTML //
-carritoVisible = () => {
-  const carritoVisible = document.createElement("div");
-  carritoVisible.classList.add("divCarrito");
-  carritoVisible.innerHTML = `<a href="../page/carritoDeCompra.html"><img src="../assets/img/shopping-cart.svg" alt="shopping-cart"></a>
-        <p>IR AL CARRITO DE COMPRAS</p>
-        </div>`;
-  ecomerceDiv.append(carritoVisible);
-};
-
-const renderizarImagenCarrito = () => {
-  if (carrito.length > 0) {
-    carritoVisible();
-  } else {
-    return false;
-  }
 };
 
 // EVENT LISTENERS
@@ -161,8 +186,6 @@ fetch(`../Js/data.json`)
     todosProductos = data;
     renderizacionDeProductos();
   });
-
-renderizarImagenCarrito();
 
 // ordenar listado por cantidad
 /*function ordenar() {
