@@ -3,6 +3,7 @@ let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 //QUERY SELECTORS GENERALES
 const contenedorCarrito = document.querySelector("#contenedorCarrito");
+const finalizacionDeCompra = document.querySelector("#finalizacionDeCompra");
 
 //FUNCIONES
 //FUNCIONALIDAD DEL CARRITO: Renderizar Carrito en HTML "CarritoDeCompra"//
@@ -54,6 +55,46 @@ const EliminarDelCarrito = (e) => {
   renderizarCarrito();
 };
 
+const botonesDeFinalizacion = () => {
+  const finalizacionDeCompraBtn = document.createElement("div");
+  finalizacionDeCompraBtn.classList.add("finalizacionDeCompraBtn");
+  finalizacionDeCompraBtn.innerHTML = `                
+  <div class="vaciarCarrito">
+       <button id="VaciarCarrito">¡Vaciá todo el Carrito!</button>
+  </div>
+  <div class="finalizarCompra">
+       <button id="FinalizarCompra">Finalizá tu Compra</button>
+  </div>`;
+  finalizacionDeCompra.append(finalizacionDeCompraBtn);
+  const botonVaciarCarrito = document.querySelector("#VaciarCarrito");
+  botonVaciarCarrito.addEventListener("click", sweetAlertPopConfirm);
+};
+
+// FUNCIONALIDAD DE BOTON DE VACIADO DE CARRITO //
+
+const sweetAlertPopConfirm = () => {
+  Swal.fire({
+    title: "¡Estas vaciando tu carrito de Compras!",
+    text: "ATENCIÓN: Esta operacion no puede revertirse",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "¡Si, quiero vaciarlo!",
+    cancelButtonText: "Cancelar",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire(
+        "Vaciaste tu carrito",
+        "Ahora podes llenarlo con nuevos productos",
+        "success"
+      );
+      localStorage.removeItem("carrito");
+      contenedorCarrito.innerHTML = "";
+    }
+  });
+};
+
 //RENDERIZACION HTML CON CARRITO SIN PRODUCTOS
 
 const carritoVacio = () => {
@@ -68,15 +109,16 @@ const carritoVacio = () => {
 
 if (carrito.length > 0) {
   renderizarCarrito();
+  botonesDeFinalizacion();
 } else {
   carritoVacio();
 }
 
 //Función para actualizar cada 5 segundos(5000 milisegundos)
-const actualizarPagina = () => {
+/* const actualizarPagina = () => {
   location.reload();
 };
 setInterval(actualizarPagina, 5000);
-
+ */
 //EJECUCIONES //
 //renderizarCarrito();

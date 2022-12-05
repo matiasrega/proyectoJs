@@ -86,8 +86,18 @@ a:active {
   width: 300px;
 }
 
-.btn:hover .btn img {
-  display: none;
+.finalizacionDeCompraBtn {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 3rem;
+}
+
+.vaciarCarrito button {
+  padding: 5px;
+}
+
+.finalizarCompra button {
+  padding: 5px;
 }
 
 .tooltip1 {

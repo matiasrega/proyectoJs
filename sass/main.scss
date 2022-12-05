@@ -88,6 +88,20 @@ a:active {
   width: 300px;
 }
 
+.finalizacionDeCompraBtn {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 3rem;
+}
+
+.vaciarCarrito button {
+  padding: 5px;
+}
+
+.finalizarCompra button {
+  padding: 5px;
+}
+
 .tooltip1 {
   position: relative;
 }
