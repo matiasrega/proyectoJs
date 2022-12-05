@@ -55,33 +55,10 @@ const renderizacionDeProductos = () => {
 const sweetAlertPopA = () => {
   let timerInterval;
   Swal.fire({
+    toast: true,
     title: "Producto Agregado al carrito",
     html: "",
-    timer: 500,
-    timerProgressBar: true,
-    didOpen: () => {
-      Swal.showLoading();
-      const b = Swal.getHtmlContainer().querySelector("b");
-      timerInterval = setInterval(() => {
-        b.textContent = Swal.getTimerLeft();
-      }, 100);
-    },
-    willClose: () => {
-      clearInterval(timerInterval);
-    },
-  }).then((result) => {
-    /* Read more about handling dismissals below */
-    if (result.dismiss === Swal.DismissReason.timer) {
-    }
-  });
-};
-//SweetAlert si el carrito esta vacio (No permite avanzar a CarritoDeCompra.HTML)
-const sweetAlertPopB = () => {
-  let timerInterval;
-  Swal.fire({
-    title: "Ups! ¡Tu carrito esta vacio!",
-    html: "Agrega Productos para poder visualizarlo",
-    timer: 2000,
+    timer: 900,
     timerProgressBar: true,
     didOpen: () => {
       Swal.showLoading();
@@ -200,15 +177,3 @@ fetch(`../Js/data.json`)
   });
   console.table(productosOrdenados);
 } */
-
-// Insercion de Botones //
-
-/* let botonListar = document.querySelector("#listarProd");
-botonListar.addEventListener("click", listarProductos);
-
-let botonAgregar = document.querySelector("#agregarProd");
-botonAgregar.addEventListener("click", agregarProducto);
-
-let botonOrdenar = document.querySelector("#ordenarProd");
-botonOrdenar.addEventListener("click", ordenar);
- */

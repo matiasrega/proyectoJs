@@ -53,6 +53,7 @@ const EliminarDelCarrito = (e) => {
 
   localStorage.setItem("carrito", JSON.stringify(carrito));
   renderizarCarrito();
+  sweetAlertPopB();
 };
 
 const botonesDeFinalizacion = () => {
@@ -70,11 +71,35 @@ const botonesDeFinalizacion = () => {
   botonVaciarCarrito.addEventListener("click", sweetAlertPopConfirm);
 };
 
-// FUNCIONALIDAD DE BOTON DE VACIADO DE CARRITO //
+//SweetAlert eliminar Productos del carrito
+const sweetAlertPopB = () => {
+  let timerInterval;
+  Swal.fire({
+    toast: true,
+    title: "Producto eliminado del carrito",
+    html: "",
+    timer: 900,
+    timerProgressBar: true,
+    didOpen: () => {
+      Swal.showLoading();
+      const b = Swal.getHtmlContainer().querySelector("b");
+      timerInterval = setInterval(() => {
+        b.textContent = Swal.getTimerLeft();
+      }, 100);
+    },
+    willClose: () => {
+      clearInterval(timerInterval);
+    },
+  }).then((result) => {
+    if (result.dismiss === Swal.DismissReason.timer) {
+    }
+  });
+};
 
+// FUNCIONALIDAD DE BOTON DE VACIADO DE CARRITO //
 const sweetAlertPopConfirm = () => {
   Swal.fire({
-    title: "¡Estas vaciando tu carrito de Compras!",
+    title: "¡Estás vaciando tu carrito de Compras!",
     text: "ATENCIÓN: Esta operacion no puede revertirse",
     icon: "warning",
     showCancelButton: true,
