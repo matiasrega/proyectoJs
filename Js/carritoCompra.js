@@ -61,12 +61,13 @@ const botonesDeFinalizacion = () => {
   finalizacionDeCompraBtn.classList.add("finalizacionDeCompraBtn");
   finalizacionDeCompraBtn.innerHTML = `                
   <div class="vaciarCarrito">
-       <button id="VaciarCarrito">¡Vaciá todo el Carrito!</button>
+       <button id="VaciarCarrito" class="btnInteractivo">¡Vaciá todo el Carrito!</button>
   </div>
   <div class="finalizarCompra">
-       <button id="FinalizarCompra">Finalizá tu Compra</button>
+        <a href="../page/pantallaDePago.html" class="btnInteractivo2">Finalizá tu compra</a>
   </div>`;
   finalizacionDeCompra.append(finalizacionDeCompraBtn);
+
   const botonVaciarCarrito = document.querySelector("#VaciarCarrito");
   botonVaciarCarrito.addEventListener("click", sweetAlertPopConfirm);
 };

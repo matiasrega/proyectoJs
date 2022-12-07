@@ -122,7 +122,7 @@ const filtroBusqueda = () => {
                 <p class="card-text"> ${producto.descripcion}
                 </p>
                 <div class="botonCompra">
-                  <button id="BotonCompra" data-id = "${producto.identificador}">Agregar al carrito</button>
+                  <button id="BotonCompra" class="btnInteractivo" data-id = "${producto.identificador}">Agregar al carrito</button>
                 </div>
               </div>
             </div>

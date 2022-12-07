@@ -26,7 +26,7 @@ let cvcErrorDiv = document.querySelector(".form__input-cvc--error");
 // Ingreso dinamico del nombre
 nameInput.addEventListener("input", () => {
   if (nameInput.value == "") {
-    nameCard.innerText = "jOSE P. PEREZ";
+    nameCard.innerText = "JOSE P. PEREZ";
   } else {
     nameCard.innerText = nameInput.value;
   }
@@ -37,7 +37,11 @@ numberInput.addEventListener("input", () => {
   // Validando que haya una letra,
   let regExp = /[A-z]/g;
   if (regExp.test(numberInput.value)) {
-    mostrarError(numberInput, numberErrorDiv, "Wrong format, numbers only");
+    mostrarError(
+      numberInput,
+      numberErrorDiv,
+      "formato erroneo, incluir numeros unicamente"
+    );
   } else {
     // borrando espacios ingresados por el usuario, agregando espacios cada 4 digitos, y borrando el espacio final
     numberInput.value = numberInput.value
@@ -47,7 +51,7 @@ numberInput.addEventListener("input", () => {
     mostrarError(numberInput, numberErrorDiv, "", false);
   }
 
-  // Actualizando graficamente la tarjeta:
+  // Actualizacion de la tarjeta con los datos:
   numberCard.innerText = numberInput.value;
 
   // Mostrando los 0s por defecto cuando no se ha ingresado nada
@@ -59,19 +63,19 @@ numberInput.addEventListener("input", () => {
 // Ingreso dinamico del mes
 monthInput.addEventListener("input", () => {
   monthCard.innerText = monthInput.value;
-  validateLetters(monthInput, monthErrorDiv);
+  validarLetras(monthInput, monthErrorDiv);
 });
 
 // Ingreso dinamico del año
 yearInput.addEventListener("input", () => {
   yearCard.innerText = yearInput.value;
-  validateLetters(yearInput, yearErrorDiv);
+  validarLetras(yearInput, yearErrorDiv);
 });
 
 // Ingreso dinamico de cvc
 cvcInput.addEventListener("input", () => {
   cvcCard.innerText = cvcInput.value;
-  validateLetters(cvcInput, cvcErrorDiv);
+  validarLetras(cvcInput, cvcErrorDiv);
 });
 
 // Boton Confirm
@@ -84,64 +88,65 @@ let monthValidation = false;
 let yearValidation = false;
 let cvcValidation = false;
 
-// Secciones Formulario y Thanks
+// Secciones Formulario y Gracias
 let formSection = document.querySelector(".form");
 let thanksSection = document.querySelector(".thanks-section");
 
 confirmBtn.addEventListener("click", (event) => {
-  event.preventDefault();
+  event.preventDefault(); // COMPLETAR CON UN SWEETALERT
 
-  // Validar Name
-  if (verifyIsFilled(nameInput, nameErrorDiv)) {
+  // Validar Nombre
+  if (verificarLlenado(nameInput, nameErrorDiv)) {
     nameValidation = true;
   } else {
     nameValidation = false;
   }
 
   // Validad Numero
-  if (verifyIsFilled(numberInput, numberErrorDiv) == true) {
+  if (verificarLlenado(numberInput, numberErrorDiv) == true) {
     if (numberInput.value.length == 19) {
       mostrarError(numberInput, numberErrorDiv, "", false);
       numberValidation = true;
     } else {
-      mostrarError(numberInput, numberErrorDiv, "Wrong number");
+      mostrarError(numberInput, numberErrorDiv, "numero erroneo");
       numberValidation = false;
     }
   }
 
   // Validar Mes
-  if (verifyIsFilled(monthInput, monthErrorDiv)) {
+  if (verificarLlenado(monthInput, monthErrorDiv)) {
     if (parseInt(monthInput.value) > 0 && parseInt(monthInput.value) <= 12) {
       mostrarError(monthInput, monthErrorDiv, "", false);
       monthValidation = true;
     } else {
-      mostrarError(monthInput, monthErrorDiv, "Wrong Month");
+      mostrarError(monthInput, monthErrorDiv, "Mes erroneo");
       monthValidation = false;
     }
   }
 
   // Validar año
-  if (verifyIsFilled(yearInput, yearErrorDiv)) {
+  if (verificarLlenado(yearInput, yearErrorDiv)) {
     if (parseInt(yearInput.value) > 22 && parseInt(yearInput.value) <= 27) {
       mostrarError(yearInput, yearErrorDiv, "", false);
       yearValidation = true;
     } else {
-      mostrarError(yearInput, yearErrorDiv, "Wrong Year");
+      mostrarError(yearInput, yearErrorDiv, "Año erroneo");
       yearValidation = false;
     }
   }
 
   // Validad cvc
-  if (verifyIsFilled(cvcInput, cvcErrorDiv)) {
+  if (verificarLlenado(cvcInput, cvcErrorDiv)) {
     if (cvcInput.value.length == 3) {
       mostrarError(cvcInput, cvcErrorDiv, "", false);
       cvcValidation = true;
     } else {
-      mostrarError(cvcInput, cvcErrorDiv, "Wrong CVC");
+      mostrarError(cvcInput, cvcErrorDiv, "codigo erroneo");
       cvcValidation = false;
     }
   }
 
+  //SI LOS DATOS SE COMPLETAN, SE MUESTRA LA SECCION DE GRACIAS
   if (
     nameValidation == true &&
     numberValidation == true &&
@@ -154,7 +159,7 @@ confirmBtn.addEventListener("click", (event) => {
   }
 });
 
-// Funciones:
+// FUNCIONES
 
 function mostrarError(divInput, divError, msgError, show = true) {
   if (show) {
@@ -166,21 +171,21 @@ function mostrarError(divInput, divError, msgError, show = true) {
   }
 }
 
-function verifyIsFilled(divInput, divError) {
+function verificarLlenado(divInput, divError) {
   if (divInput.value.length > 0) {
     mostrarError(divInput, divError, "", false);
     return true;
   } else {
-    mostrarError(divInput, divError, "Can't be blank");
+    mostrarError(divInput, divError, "Campo obligatorio");
     return false;
   }
 }
 
-function validateLetters(input, divError) {
+function validarLetras(input, divError) {
   // Validando que haya una letra,
   let regExp = /[A-z]/g;
   if (regExp.test(input.value)) {
-    mostrarError(input, divError, "Wrong format, numbers only");
+    mostrarError(input, divError, "Formato erroneo, acepta solo numeros");
   } else {
     mostrarError(input, divError, "", false);
   }
