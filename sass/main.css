@@ -12,6 +12,25 @@
   font-weight: bold;
 }
 
+.precioFinal {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  justify-content: center;
+  align-content: center;
+  font-size: 1em;
+  letter-spacing: 1px;
+}
+.precioFinal p {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.precioFinal__p {
+  text-justify: start;
+  justify-self: start;
+  color: #000;
+}
+
 .btnInteractivo {
   background-color: hsl(278deg, 68%, 11%);
   color: hsl(270deg, 3%, 87%);
@@ -85,6 +104,10 @@
 }
 .mainPantallaPago .mainPantallaPagoBkSection {
   background-color: aqua;
+}
+
+.main-PantallaPago {
+  background-image: url(../assets/img/fondo\ fungi\ -\ opaco.jpg);
 }
 
 .main-container {
@@ -558,15 +581,18 @@ a:active {
 }
 
 .mainProductos .divEcomerce, .mainCarrito .divEcomerce, .mainContacto .divEcomerce, .mainHongos .divEcomerce, .mainInvestigacion .divEcomerce {
-  height: 100px;
+  height: 200px;
+  width: 70%;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-items: center;
+  justify-content: end;
 }
 .mainProductos .divCarrito, .mainCarrito .divCarrito, .mainContacto .divCarrito, .mainHongos .divCarrito, .mainInvestigacion .divCarrito {
   display: flex;
   flex-direction: column-reverse;
   width: 15rem;
+  margin-bottom: 25px;
 }
 .mainProductos .divCarrito a, .mainCarrito .divCarrito a, .mainContacto .divCarrito a, .mainHongos .divCarrito a, .mainInvestigacion .divCarrito a {
   margin: 0 auto;
@@ -579,6 +605,28 @@ a:active {
   width: auto;
 }
 .mainProductos .divCarrito p, .mainCarrito .divCarrito p, .mainContacto .divCarrito p, .mainHongos .divCarrito p, .mainInvestigacion .divCarrito p {
+  text-align: center;
+  margin: 0;
+}
+
+.VolverACarrito {
+  display: flex;
+  flex-direction: column-reverse;
+  width: 15rem;
+  margin-bottom: 25px;
+  margin-top: 25px;
+}
+.VolverACarrito a {
+  margin: 0 auto;
+  justify-items: center;
+  align-items: center;
+}
+.VolverACarrito img {
+  margin: 0 auto;
+  height: 5rem;
+  width: auto;
+}
+.VolverACarrito p {
   text-align: center;
   margin: 0;
 }

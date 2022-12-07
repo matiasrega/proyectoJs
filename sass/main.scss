@@ -12,6 +12,25 @@
   font-weight: bold;
 }
 
+.precioFinal {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  justify-content: center;
+  align-content: center;
+  font-size: 1em;
+  letter-spacing: 1px;
+  p {
+    text-align: center;
+    margin-top: 15px;
+  }
+}
+
+.precioFinal__p {
+  text-justify: start;
+  justify-self: start;
+  color: #000;
+}
+
 .btnInteractivo {
   background-color: hsl(278deg, 68%, 11%);
   color: hsl(270deg, 3%, 87%);
@@ -85,6 +104,10 @@
   .mainPantallaPagoBkSection {
     background-color: aqua;
   }
+}
+
+.main-PantallaPago {
+  background-image: url(../assets/img/fondo\ fungi\ -\ opaco.jpg);
 }
 
 .main-container {
@@ -487,15 +510,18 @@ a:active {
 
 .mainProductos {
   .divEcomerce {
-    height: 100px;
+    height: 200px;
+    width: 70%;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-items: center;
+    justify-content: end;
   }
   .divCarrito {
     display: flex;
     flex-direction: column-reverse;
     width: 15rem;
+    margin-bottom: 25px;
     a {
       margin: 0 auto;
       justify-items: center;
@@ -510,6 +536,28 @@ a:active {
       text-align: center;
       margin: 0;
     }
+  }
+}
+
+.VolverACarrito {
+  display: flex;
+  flex-direction: column-reverse;
+  width: 15rem;
+  margin-bottom: 25px;
+  margin-top: 25px;
+  a {
+    margin: 0 auto;
+    justify-items: center;
+    align-items: center;
+  }
+  img {
+    margin: 0 auto;
+    height: 5rem;
+    width: auto;
+  }
+  p {
+    text-align: center;
+    margin: 0;
   }
 }
 

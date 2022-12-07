@@ -1,3 +1,6 @@
+//VARIABLES
+let iva = 1.21;
+
 //VARIABLE DE VALIDACION
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
@@ -28,16 +31,28 @@ const renderizarCarrito = () => {
             <div class="col-sm-8">
               <div class="card-body">
                 <h5 class="card-title text-center">Has agregado a tu carrito el siguiente producto</h5>
-                 <p class="card-text"> ${producto.tipoDeProducto} de ${producto.nombre}: $${producto.importe}
+                 <p class="card-text"> ${producto.tipoDeProducto.toUpperCase()} de ${producto.nombre.toUpperCase()}</p>
                 </p>
                 <div class="botonEliminar">
-                  <button id="BotonEliminar"class="btnInteractivo3" data-id = "${producto.identificador}">Eliminar Producto</button>
+                  <button id="BotonEliminar"class="btnInteractivo3" data-id = "${
+                    producto.identificador
+                  }">Eliminar Producto</button>
                 </div>
               </div>
+            </div>
+            <div class="col-sm-2 align-self-center precioFinal">
+              <p class="precioFinal__p"> PRECIO</p> <p>$${producto.importe}</p>
+              <p class="precioFinal__p"> IVA (${iva * 100 - 100}%) </p> <p>$${
+      producto.importe * iva - producto.importe
+    } </p>
+              <p class="precioFinal__p"> PRECIO FINAL</p><p>$${precioFinal()} </p>
             </div>
           </div>
         </div>`;
     contenedorCarrito.append(productoDelCarrito);
+    function precioFinal() {
+      return producto.importe * 1.21;
+    }
   });
   const BotonEliminar = document.querySelectorAll("#BotonEliminar");
   BotonEliminar.forEach((boton) => {

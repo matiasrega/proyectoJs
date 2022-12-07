@@ -1,6 +1,7 @@
 //VARIABLES
 let todosProductos = [];
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+let iva = 1.21;
 //const ordenadoCantidad = [];
 
 //QUERY SELECTORS GENERALES
@@ -33,7 +34,7 @@ const renderizacionDeProductos = () => {
             <div class="col-md-8">
               <div class="card-body">
                 <h5 class="card-title text-center">${producto.tipoDeProducto.toUpperCase()} de ${producto.nombre.toUpperCase()}</h5> <p class="precioProducto">PRECIO: $${
-      producto.importe
+      producto.importe * iva
     }</p>
                 <p class="card-text"> ${producto.descripcion}
                 </p>

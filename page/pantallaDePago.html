@@ -91,113 +91,123 @@
       </nav>
     </header>
 
-    <main class="main-container">
-      <section class="main-container__background-section">
-        <div class="cardFrente">
-          <img
-            class="card__logo"
-            src="../assets/img/card-logo.svg"
-            alt="logo"
-          />
-          <p class="card__number">0000 0000 0000 0000</p>
-          <div class="card__details">
-            <p class="card__details-name">Jose P. Perez</p>
-            <p>
-              <span class="card__month">00</span>/<span class="card__year"
-                >00</span
-              >
-            </p>
-          </div>
-        </div>
+    <main class="main-PantallaPago">
+      <div class="VolverACarrito">
+        <a href="./carritoDeCompra.html" class="btnInteractivo2"
+          >VOLVER AL CARRITO</a
+        >
+      </div>
 
-        <div class="card-back">
-          <p class="card-back__cvc">000</p>
-        </div>
-      </section>
-
-      <section class="main-container__form-section">
-        <form class="form" action="">
-          <label class="form__label" for="cardholder">Nombre del titular</label>
-          <input
-            class="form__input"
-            type="text"
-            name="cardholder"
-            id="cardholder"
-            placeholder="Jose P. Perez"
-          />
-          <div class="form__cardholder--error error"></div>
-
-          <label class="form__label" for="cardNumber"
-            >Numero de la tarjeta</label
-          >
-          <input
-            class="form__input"
-            type="text"
-            name="cardNumber"
-            id="cardNumber"
-            maxlength="19"
-            placeholder="1234 5678 0000 0000"
-          />
-          <div class="form__inputnumber--error error"></div>
-
-          <div class="form__date-cvc">
-            <!-- grid -->
-            <!-- 1 -->
-            <label class="form__label" for="cardMonth"
-              >Vencimiento(MM/AA)</label
-            >
-            <!-- 2 -->
-            <label class="form__label" for="cardCvc">COD.</label>
-            <!-- 3 -->
-            <div class="form__date">
-              <input
-                class="form__input"
-                type="text"
-                maxlength="2"
-                name="cardMonth"
-                id="cardMonth"
-                placeholder="MM"
-              />
-              <input
-                class="form__input"
-                type="text"
-                maxlength="2"
-                name="cardYear"
-                id="cardYear"
-                placeholder="YY"
-              />
+      <section class="main-container">
+        <section class="main-container__background-section">
+          <div class="cardFrente">
+            <img
+              class="card__logo"
+              src="../assets/img/card-logo.svg"
+              alt="logo"
+            />
+            <p class="card__number">0000 0000 0000 0000</p>
+            <div class="card__details">
+              <p class="card__details-name">Jose P. Perez</p>
+              <p>
+                <span class="card__month">00</span>/<span class="card__year"
+                  >00</span
+                >
+              </p>
             </div>
-            <!-- 4 -->
+          </div>
+
+          <div class="card-back">
+            <p class="card-back__cvc">000</p>
+          </div>
+        </section>
+
+        <section class="main-container__form-section">
+          <form class="form" action="">
+            <label class="form__label" for="cardholder"
+              >Nombre del titular</label
+            >
             <input
               class="form__input"
               type="text"
-              maxlength="3"
-              name="cardCvc"
-              id="cardCvc"
-              placeholder="e.g. 123"
+              name="cardholder"
+              id="cardholder"
+              placeholder="Jose P. Perez"
             />
-            <!-- 5 -->
-            <div class="form__errors-container">
-              <div class="form__input-mm--error error"></div>
-              <div class="form__input-yy--error error"></div>
-            </div>
-            <!-- 6 -->
-            <div class="form__input-cvc--error error"></div>
-          </div>
-          <input class="form__submit" type="submit" value="Confirm" />
-        </form>
+            <div class="form__cardholder--error error"></div>
 
-        <section class="thanks-section">
-          <img
-            class="thanks-section__img"
-            src="../assets/img/icon-complete.svg"
-            alt="complete icon"
-          />
-          <h1 class="thanks-section__title">Gracias!</h1>
-          <p class="thanks-section__text">
-            Hemos agregado los datos de tu tarjeta
-          </p>
-          <button class="thanks-section__button">Continuar</button>
+            <label class="form__label" for="cardNumber"
+              >Numero de la tarjeta</label
+            >
+            <input
+              class="form__input"
+              type="text"
+              name="cardNumber"
+              id="cardNumber"
+              maxlength="19"
+              placeholder="1234 5678 0000 0000"
+            />
+            <div class="form__inputnumber--error error"></div>
+
+            <div class="form__date-cvc">
+              <!-- grid -->
+              <!-- 1 -->
+              <label class="form__label" for="cardMonth"
+                >Vencimiento(MM/AA)</label
+              >
+              <!-- 2 -->
+              <label class="form__label" for="cardCvc">COD.</label>
+              <!-- 3 -->
+              <div class="form__date">
+                <input
+                  class="form__input"
+                  type="text"
+                  maxlength="2"
+                  name="cardMonth"
+                  id="cardMonth"
+                  placeholder="MM"
+                />
+                <input
+                  class="form__input"
+                  type="text"
+                  maxlength="2"
+                  name="cardYear"
+                  id="cardYear"
+                  placeholder="YY"
+                />
+              </div>
+              <!-- 4 -->
+              <input
+                class="form__input"
+                type="text"
+                maxlength="3"
+                name="cardCvc"
+                id="cardCvc"
+                placeholder="e.g. 123"
+              />
+              <!-- 5 -->
+              <div class="form__errors-container">
+                <div class="form__input-mm--error error"></div>
+                <div class="form__input-yy--error error"></div>
+              </div>
+              <!-- 6 -->
+              <div class="form__input-cvc--error error"></div>
+            </div>
+            <input class="form__submit" type="submit" value="Confirmar" />
+          </form>
+
+          <section class="thanks-section">
+            <img
+              class="thanks-section__img"
+              src="../assets/img/icon-complete.svg"
+              alt="complete icon"
+            />
+            <h1 class="thanks-section__title">Gracias!</h1>
+            <p class="thanks-section__text">
+              Hemos agregado los datos de tu tarjeta
+            </p>
+            <button class="thanks-section__button">Continuar</button>
+          </section>
         </section>
       </section>
     </main>
