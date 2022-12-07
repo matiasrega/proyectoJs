@@ -32,11 +32,15 @@ const renderizacionDeProductos = () => {
             </div>
             <div class="col-md-8">
               <div class="card-body">
-                <h5 class="card-title text-center">${producto.tipoDeProducto} de ${producto.nombre}: $${producto.importe}</h5>
+                <h5 class="card-title text-center">${producto.tipoDeProducto.toUpperCase()} de ${producto.nombre.toUpperCase()}</h5> <p class="precioProducto">PRECIO: $${
+      producto.importe
+    }</p>
                 <p class="card-text"> ${producto.descripcion}
                 </p>
                 <div class="botonCompra">
-                  <button id="BotonCompra" data-id = "${producto.identificador}">Agregar al carrito</button>
+                  <button id="BotonCompra" class="btnInteractivo3" data-id = "${
+                    producto.identificador
+                  }">Agregar al carrito</button>
                 </div>
               </div>
             </div>
@@ -118,11 +122,15 @@ const filtroBusqueda = () => {
             </div>
             <div class="col-md-8">
               <div class="card-body">
-                <h5 class="card-title text-center">${producto.tipoDeProducto} de ${producto.nombre}: $${producto.importe}</h5>
+                <h5 class="card-title text-center" >${producto.tipoDeProducto.toUpperCase()} de ${producto.nombre.toUpperCase()}</h5><p class="precioProducto">PRECIO: $${
+      producto.importe
+    }</p>
                 <p class="card-text"> ${producto.descripcion}
                 </p>
                 <div class="botonCompra">
-                  <button id="BotonCompra" class="btnInteractivo" data-id = "${producto.identificador}">Agregar al carrito</button>
+                  <button id="BotonCompra" class="btnInteractivo3" data-id = "${
+                    producto.identificador
+                  }">Agregar al carrito</button>
                 </div>
               </div>
             </div>

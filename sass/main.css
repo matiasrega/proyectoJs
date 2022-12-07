@@ -28,11 +28,22 @@
 
 .btnInteractivo2 {
   text-decoration: none;
+  color: hsl(270deg, 3%, 87%);
+  background-color: hsl(278deg, 68%, 11%);
+  border-radius: 8px;
+  font-size: 1em;
+  letter-spacing: 1px;
+  margin: 100px;
+  padding: 7px;
 }
 
-.finalizarCompra a {
-  text-align: center;
-  text-decoration: none !important;
+.btnInteractivo2:hover {
+  text-decoration: none;
+  color: hsl(270deg, 3%, 87%);
+}
+
+.finalizarCompra {
+  height: 100%;
 }
 
 .finalizacionDeCompraBtn {
@@ -42,6 +53,29 @@
 
 .btnInteractivo:hover {
   cursor: pointer;
+}
+
+.btnInteractivo3 {
+  background-color: hsl(278deg, 68%, 11%);
+  color: hsl(270deg, 3%, 87%);
+  width: 30%;
+  height: 35px;
+  border-radius: 8px;
+  font-size: 1em;
+  letter-spacing: 1px;
+  font-family: "Space Grotesk", sans-serif;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.precioProducto {
+  border: #000 1px solid;
+  text-align: center;
+  font-family: kalam;
+  border-radius: 8px;
+  background-color: hsl(278deg, 68%, 11%);
+  color: hsl(270deg, 3%, 87%);
 }
 
 .mainPantallaPago {

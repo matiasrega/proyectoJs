@@ -31,7 +31,7 @@ const renderizarCarrito = () => {
                  <p class="card-text"> ${producto.tipoDeProducto} de ${producto.nombre}: $${producto.importe}
                 </p>
                 <div class="botonEliminar">
-                  <button id="BotonEliminar" data-id = "${producto.identificador}">Eliminar Producto</button>
+                  <button id="BotonEliminar"class="btnInteractivo3" data-id = "${producto.identificador}">Eliminar Producto</button>
                 </div>
               </div>
             </div>
