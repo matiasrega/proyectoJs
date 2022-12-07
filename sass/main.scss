@@ -15,7 +15,7 @@
 .precioFinal {
   display: grid;
   grid-template-columns: 60% 40%;
-  justify-content: center;
+  justify-content: start;
   align-content: center;
   font-size: 1em;
   letter-spacing: 1px;
@@ -77,7 +77,7 @@
 .btnInteractivo3 {
   background-color: hsl(278deg, 68%, 11%);
   color: hsl(270deg, 3%, 87%);
-  width: 30%;
+  width: 200px;
   height: 35px;
   border-radius: 8px;
   font-size: 1em;
@@ -86,6 +86,20 @@
   text-decoration: none;
   justify-content: center;
   align-items: center;
+}
+
+.resumenProductos {
+  border: #000 5px solid;
+  background-color: hsl(278deg, 68%, 11%);
+  color: hsl(270deg, 25%, 87%);
+  border-radius: 8px;
+  font-size: 25px;
+  width: 300px;
+  display: flex;
+  margin: 0 auto;
+  p {
+    margin: 0 auto;
+  }
 }
 
 .precioProducto {
@@ -97,6 +111,11 @@
   color: hsl(270deg, 3%, 87%);
 }
 
+.carritoVacio {
+  text-align: center;
+  font-size: 25px;
+  color: black;
+}
 .mainPantallaPago {
   border: 1px saddlebrown solid;
   width: 375px;

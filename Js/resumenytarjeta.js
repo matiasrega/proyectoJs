@@ -1,3 +1,6 @@
+// Variable de validacion;
+let totalAPagar = JSON.parse(localStorage.getItem("totalAPagar")) || [];
+
 // Titular de la Tarjeta
 let nameCard = document.querySelector(".card__details-name");
 let nameInput = document.querySelector("#cardholder");

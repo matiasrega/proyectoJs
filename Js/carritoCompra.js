@@ -45,7 +45,7 @@ const renderizarCarrito = () => {
               <p class="precioFinal__p"> IVA (${iva * 100 - 100}%) </p> <p>$${
       producto.importe * iva - producto.importe
     } </p>
-              <p class="precioFinal__p"> PRECIO FINAL</p><p>$${precioFinal()} </p>
+              <p class="precioFinal__p"> P.FINAL</p><p>$${precioFinal()} </p>
             </div>
           </div>
         </div>`;
@@ -69,6 +69,23 @@ const EliminarDelCarrito = (e) => {
   localStorage.setItem("carrito", JSON.stringify(carrito));
   renderizarCarrito();
   sweetAlertPopB();
+  actualizarPagina();
+};
+
+const renderizarResumenCarrito = () => {
+  const resumenTotal = carrito.reduce(
+    (acumulador, producto) => acumulador + producto.importe * iva,
+    0
+  );
+  const divResumenProductos = document.createElement("div");
+  divResumenProductos.classList.add("divResumenProductos");
+  divResumenProductos.innerHTML = `
+  <div class="resumenProductos">
+  <p>Total a pagar</p>
+  <p>$ ${resumenTotal}<p>
+  </div>`;
+  finalizacionDeCompra.append(divResumenProductos);
+  localStorage.setItem("totalAPagar", JSON.stringify(resumenTotal));
 };
 
 const botonesDeFinalizacion = () => {
@@ -79,7 +96,7 @@ const botonesDeFinalizacion = () => {
        <button id="VaciarCarrito" class="btnInteractivo">¡Vaciá todo el Carrito!</button>
   </div>
   <div class="finalizarCompra">
-        <a href="../page/pantallaDePago.html" class="btnInteractivo2">Finalizá tu compra</a>
+        <a href="../page/pantallaDePago.html" class="btnInteractivo2">¡Pagá tus productos!</a>
   </div>`;
   finalizacionDeCompra.append(finalizacionDeCompraBtn);
 
@@ -132,6 +149,7 @@ const sweetAlertPopConfirm = () => {
       );
       localStorage.removeItem("carrito");
       contenedorCarrito.innerHTML = "";
+      actualizarPagina();
     }
   });
 };
@@ -141,7 +159,7 @@ const sweetAlertPopConfirm = () => {
 const carritoVacio = () => {
   const mensajeCarritoVacio = document.createElement("div");
   mensajeCarritoVacio.innerHTML = `
-    <div>
+    <div class="carritoVacio">
       <p>¡TU CARRITO ESTA VACIO!
       ¡VOLVE ATRÁS QUE SEGURO ENCONTRARÁS ALGUN PRODUCTO INTERESANTE!</p>
     </div>`;
@@ -150,16 +168,14 @@ const carritoVacio = () => {
 
 if (carrito.length > 0) {
   renderizarCarrito();
+  renderizarResumenCarrito();
   botonesDeFinalizacion();
 } else {
   carritoVacio();
 }
 
 //Función para actualizar cada 5 segundos(5000 milisegundos)
-/* const actualizarPagina = () => {
+const actualizarPagina = () => {
   location.reload();
 };
-setInterval(actualizarPagina, 5000);
- */
-//EJECUCIONES //
-//renderizarCarrito();
+/*setInterval(actualizarPagina, 5000);*/
