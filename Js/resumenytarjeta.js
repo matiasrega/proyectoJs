@@ -7,8 +7,19 @@ const visualizaPagoOnline = document.querySelector(
   ".main-container-displayNone"
 );
 
-console.log(pagoOnline);
-console.log(visualizaPagoOnline);
+//Pago en destino
+const pagoEnDestino = document.querySelector("#pagoEnDestino");
+const visualizaPagoEnDestino = document.querySelector(
+  ".formularioEnvio-displayNone"
+);
+const visualizaPagoEnDestinoContainer = document.querySelector(
+  ".formularioEnvio-displayNone__container"
+);
+
+const mainContainer = document.querySelector(".main-container");
+const mainCointainerDispNone = document.querySelector(
+  ".main-container-displayNone"
+);
 
 // Titular de la Tarjeta
 let nameCard = document.querySelector(".card__details-name");
@@ -53,9 +64,28 @@ resumenAPagar.append(divResumenAPagar);
 const habilitaPagoOnline = () => {
   visualizaPagoOnline.classList.add("main-container");
   visualizaPagoOnline.classList.remove("main-container-displayNone");
+  visualizaPagoEnDestino.classList.add("formularioEnvio");
+  visualizaPagoEnDestino.classList.remove("formularioEnvio-displayNone");
+  visualizaPagoEnDestinoContainer.classList.add("formularioEnvio__container");
+  visualizaPagoEnDestinoContainer.classList.remove(
+    "formularioEnvio-displayNone__container"
+  );
+};
+
+// Pago al recibir el producto
+const formularioEnvio = () => {
+  visualizaPagoEnDestino.classList.add("formularioEnvio");
+  visualizaPagoEnDestino.classList.remove("formularioEnvio-displayNone");
+  visualizaPagoEnDestinoContainer.classList.add("formularioEnvio__container");
+  visualizaPagoEnDestinoContainer.classList.remove(
+    "formularioEnvio-displayNone__container"
+  );
+  visualizaPagoOnline.classList.add("main-container-displayNone");
+  visualizaPagoOnline.classList.remove("main-container");
 };
 
 pagoOnline.addEventListener("click", habilitaPagoOnline);
+pagoEnDestino.addEventListener("click", formularioEnvio);
 
 // Ingreso dinamico del nombre
 nameInput.addEventListener("input", () => {

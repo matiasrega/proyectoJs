@@ -112,7 +112,7 @@
         <div class="seleccionMPago" id="seleccionmPago">
           <p>Elegi el medio de pago</p>
           <button id="pagoEnDestino" class="btnInteractivo3">
-            Pago en destino
+            Pago contra entrega
           </button>
           <button id="pagoOnline" class="btnInteractivo3">Pago online</button>
         </div>
@@ -223,11 +223,75 @@
             />
             <h1 class="thanks-section__title">Gracias!</h1>
             <p class="thanks-section__text">
-              Hemos agregado los datos de tu tarjeta
+              ¡Su pago se ha procesado con exito!
             </p>
             <button class="thanks-section__button">Continuar</button>
           </section>
         </section>
+      </section>
+      <section class="formularioEnvio-displayNone">
+        <h3>Déjanos tu informacion para enviarte los productos</h3>
+        <form class="formularioEnvio-displayNone__container" action="">
+          <ul>
+            <li>
+              <input
+                class="nombreApellido"
+                type="text"
+                name="Nombre y Apellido"
+                placeholder=" Nombre y Apellido"
+                id="Nombre y Apellido"
+                required
+              />
+            </li>
+
+            <li>
+              <input
+                class="telefono"
+                type="tel"
+                name="telefono"
+                placeholder=" Telefono"
+                id="telefono"
+                required
+              />
+            </li>
+
+            <li>
+              <input
+                class="email"
+                type="email"
+                name="email"
+                placeholder=" Email"
+                id="email"
+                required
+              />
+            </li>
+            <li>
+              <input
+                class="direccion"
+                type="text"
+                name="direccion"
+                placeholder=" Direccion"
+                id="direccion"
+                required
+              />
+            </li>
+            <li>
+              <textarea
+                class="mensaje"
+                name="Mensaje"
+                id="Mensaje"
+                cols="30"
+                rows="1"
+                required
+                placeholder=" Dejanos alguna observacion sobre la entrega"
+              ></textarea>
+            </li>
+
+            <li class="buttonsEnvio">
+              <button class="btnInteractivo3">Confirmar Datos</button>
+            </li>
+          </ul>
+        </form>
       </section>
     </main>
 
@@ -269,6 +333,8 @@
       </div>
     </footer>
 
+    <script src="sweetalert2.all.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../Js/resumenytarjeta.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"

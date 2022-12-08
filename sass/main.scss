@@ -93,6 +93,54 @@
 .displayNone {
   display: none;
 }
+.formularioEnvio-displayNone {
+  display: none;
+}
+
+.formularioEnvio {
+  justify-content: center;
+  margin: 0 auto;
+  h3 {
+    width: max-content;
+    margin: 0 auto;
+    text-align: center;
+    color: hsl(270deg, 3%, 87%);
+    border-radius: 5px;
+    background-color: hsl(278deg, 68%, 11%);
+  }
+  &__container {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: hsl(270deg, 3%, 87%);
+    border-radius: 8px;
+    font-size: 1em;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: center;
+    ul {
+      background-color: hsl(278deg, 68%, 11%);
+      padding-left: 0px;
+      margin: 0 auto;
+      text-align: center;
+      border-radius: 8px;
+      li {
+        border-radius: 8px;
+        padding: 10px;
+        width: 100%;
+        input {
+          width: 100%;
+          padding: 5px;
+        }
+      }
+    }
+  }
+}
+
+.buttonsEnvio {
+  margin: 0 auto;
+  justify-content: center;
+  border-color: white;
+}
 
 .btnInteractivo3 {
   background-color: hsl(278deg, 68%, 11%);
@@ -106,6 +154,10 @@
   text-decoration: none;
   justify-content: center;
   align-items: center;
+}
+
+.btnInteractivo3:hover {
+  border-color: white;
 }
 
 .resumenProductos {
@@ -179,7 +231,8 @@
 }
 
 .divResumenAPagar {
-  margin: 25px;
+  margin: 25px 25px 0px 25px;
+  padding-bottom: 25px;
 }
 
 .cardFrente {
