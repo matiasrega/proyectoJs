@@ -16,10 +16,14 @@ const visualizaPagoEnDestinoContainer = document.querySelector(
   ".formularioEnvio-displayNone__container"
 );
 
+// Switch entre las 2 clases de pago
 const mainContainer = document.querySelector(".main-container");
 const mainCointainerDispNone = document.querySelector(
   ".main-container-displayNone"
 );
+
+// Confirmar datos de envio y fin de compra
+const confirmaYFinaliza = document.querySelector("#confirmaYFinalizanBtn");
 
 // Titular de la Tarjeta
 let nameCard = document.querySelector(".card__details-name");
@@ -58,8 +62,9 @@ divResumenAPagar.innerHTML = `
   </div>`;
 resumenAPagar.append(divResumenAPagar);
 
-// Elegir medio de pago
-// Pago Online (Habilita tarjeta de credito)
+// Renderizado Elegir medio de pago
+
+// Pago Online (Habilita tarjeta de credito y Envio)
 
 const habilitaPagoOnline = () => {
   visualizaPagoOnline.classList.add("main-container");
@@ -72,7 +77,7 @@ const habilitaPagoOnline = () => {
   );
 };
 
-// Pago al recibir el producto
+// Pago al recibir el producto (Habilita solo Envio)
 const formularioEnvio = () => {
   visualizaPagoEnDestino.classList.add("formularioEnvio");
   visualizaPagoEnDestino.classList.remove("formularioEnvio-displayNone");
@@ -86,6 +91,21 @@ const formularioEnvio = () => {
 
 pagoOnline.addEventListener("click", habilitaPagoOnline);
 pagoEnDestino.addEventListener("click", formularioEnvio);
+
+// Finalizar Compra y confirmar datos
+
+const finalizaCompra = () => {
+  Swal.fire({
+    position: "top-center",
+    icon: "success",
+    title:
+      "tu compra ha sido procesada. En breve te enviaremos un mail con los detalles",
+    showConfirmButton: true,
+    timer: 3000,
+  });
+};
+
+confirmaYFinaliza.addEventListener("click", finalizaCompra);
 
 // Ingreso dinamico del nombre
 nameInput.addEventListener("input", () => {
@@ -157,7 +177,7 @@ let formSection = document.querySelector(".form");
 let thanksSection = document.querySelector(".thanks-section");
 
 confirmBtn.addEventListener("click", (event) => {
-  event.preventDefault(); // COMPLETAR CON UN SWEETALERT
+  event.preventDefault();
 
   // Validar Nombre
   if (verificarLlenado(nameInput, nameErrorDiv)) {
