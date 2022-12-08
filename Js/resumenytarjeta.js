@@ -1,6 +1,15 @@
 // Variable de validacion;
 let totalAPagar = JSON.parse(localStorage.getItem("totalAPagar")) || [];
 
+// Display None - Pago Online
+const pagoOnline = document.querySelector("#pagoOnline");
+const visualizaPagoOnline = document.querySelector(
+  ".main-container-displayNone"
+);
+
+console.log(pagoOnline);
+console.log(visualizaPagoOnline);
+
 // Titular de la Tarjeta
 let nameCard = document.querySelector(".card__details-name");
 let nameInput = document.querySelector("#cardholder");
@@ -25,6 +34,28 @@ let yearErrorDiv = document.querySelector(".form__input-yy--error");
 let cvcCard = document.querySelector(".card-back__cvc");
 let cvcInput = document.querySelector("#cardCvc");
 let cvcErrorDiv = document.querySelector(".form__input-cvc--error");
+
+//Resumen a pagar
+const resumenAPagar = document.querySelector("#main-pantallaPago");
+
+const divResumenAPagar = document.createElement("div");
+divResumenAPagar.classList.add("divResumenAPagar");
+divResumenAPagar.innerHTML = `
+  <div class="resumenProductos">
+  <p>Total a pagar</p>
+  <p>$ ${totalAPagar}<p>
+  </div>`;
+resumenAPagar.append(divResumenAPagar);
+
+// Elegir medio de pago
+// Pago Online (Habilita tarjeta de credito)
+
+const habilitaPagoOnline = () => {
+  visualizaPagoOnline.classList.add("main-container");
+  visualizaPagoOnline.classList.remove("main-container-displayNone");
+};
+
+pagoOnline.addEventListener("click", habilitaPagoOnline);
 
 // Ingreso dinamico del nombre
 nameInput.addEventListener("input", () => {

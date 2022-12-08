@@ -65,6 +65,22 @@
   height: 100%;
 }
 
+.seleccionMPago {
+  border: #000 2px solid;
+  width: 600px;
+  padding: 10px;
+  margin: 0 auto;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+  align-items: baseline;
+}
+.seleccionMPago p {
+  font-weight: bolder;
+  font-style: oblique;
+}
+
 .finalizacionDeCompraBtn {
   justify-content: center;
   align-items: center;
@@ -72,6 +88,10 @@
 
 .btnInteractivo:hover {
   cursor: pointer;
+}
+
+.displayNone {
+  display: none;
 }
 
 .btnInteractivo3 {
@@ -130,6 +150,10 @@
   background-image: url(../assets/img/fondo\ fungi\ -\ opaco.jpg);
 }
 
+.main-container-displayNone {
+  display: none;
+}
+
 .main-container {
   width: 375px;
   margin: auto;
@@ -157,6 +181,10 @@
     height: 900px;
   }
 }
+.divResumenAPagar {
+  margin: 25px;
+}
+
 .cardFrente {
   width: 288px;
   height: 160px;
