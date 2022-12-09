@@ -25,6 +25,12 @@ const mainCointainerDispNone = document.querySelector(
 // Confirmar datos de envio y fin de compra
 const confirmaYFinaliza = document.querySelector("#confirmaYFinalizanBtn");
 
+// Verifica datos de envio completos
+let envioNombreyApellido = document.querySelector("#NombreYApellido");
+let enviotelefono = document.querySelector("#telefono");
+let envioemail = document.querySelector("#email");
+let enviodireccion = document.querySelector("#direccion");
+
 // Titular de la Tarjeta
 let nameCard = document.querySelector(".card__details-name");
 let nameInput = document.querySelector("#cardholder");
@@ -92,22 +98,35 @@ const formularioEnvio = () => {
 pagoOnline.addEventListener("click", habilitaPagoOnline);
 pagoEnDestino.addEventListener("click", formularioEnvio);
 
-// Finalizar Compra y confirmar datos
+// Finalizar Compra y confirmar datos (No permite avanzar si no hay datos de envio)
 
-const finalizaCompra = () => {
-  Swal.fire({
-    position: "top-center",
-    icon: "success",
-    title:
-      "tu compra ha sido procesada. En breve te enviaremos un mail con los detalles",
-    showConfirmButton: true,
-    timer: 3000,
-  });
-};
-
-confirmaYFinaliza.addEventListener("click", finalizaCompra);
+confirmaYFinaliza.addEventListener("click", (event) => {
+  event.preventDefault();
+  if (
+    envioNombreyApellido.value == "" ||
+    enviotelefono.value == "" ||
+    envioemail.value == "" ||
+    enviodireccion.value == ""
+  ) {
+    Swal.fire({
+      icon: "error",
+      title: "¡Faltan datos!",
+      text: "Completá todos los datos del envio para que te lleguen tus productos",
+      toast: true,
+    });
+  } else {
+    Swal.fire({
+      icon: "success",
+      title:
+        "¡Gracias por tu compra!, te enviaremos un mail a tu casilla en unos minutos",
+      showConfirmButton: false,
+      timer: 2500,
+    });
+  }
+});
 
 // Ingreso dinamico del nombre
+
 nameInput.addEventListener("input", () => {
   if (nameInput.value == "") {
     nameCard.innerText = "JOSE P. PEREZ";

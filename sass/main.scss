@@ -93,6 +93,7 @@
 .displayNone {
   display: none;
 }
+
 .formularioEnvio-displayNone {
   display: none;
 }
@@ -127,6 +128,10 @@
         border-radius: 8px;
         padding: 10px;
         width: 100%;
+        .mensajeEnvio {
+          width: 100%;
+          height: 100px;
+        }
         input {
           width: 100%;
           padding: 5px;

@@ -172,17 +172,3 @@ fetch(`../Js/data.json`)
     todosProductos = data;
     renderizacionDeProductos();
   });
-
-// ordenar listado por cantidad
-/*function ordenar() {
-  let productosOrdenados = productos.sort((a, b) => {
-    if (a.Cantidad > b.Cantidad) {
-      return 1;
-    }
-    if (a.Cantidad < b.Cantidad) {
-      return -1;
-    }
-    return 0;
-  });
-  console.table(productosOrdenados);
-} */
