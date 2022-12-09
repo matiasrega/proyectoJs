@@ -124,11 +124,6 @@ confirmaYFinaliza.addEventListener("click", (event) => {
       showConfirmButton: true,
       timer: 2500,
     });
-    const irA = () => {
-      const link = "../page/productosypresentaciones.html";
-      location.replace(link);
-    };
-    irA();
   }
 });
 
