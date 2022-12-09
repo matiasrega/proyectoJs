@@ -109,6 +109,8 @@ confirmaYFinaliza.addEventListener("click", (event) => {
     enviodireccion.value == ""
   ) {
     Swal.fire({
+      background: "hsl(270deg, 3%, 87%)",
+      confirmButtonColor: "hsl(278deg, 68%, 11%)",
       icon: "error",
       title: "¡Faltan datos!",
       text: "Completá todos los datos del envio para que te lleguen tus productos",
@@ -119,9 +121,14 @@ confirmaYFinaliza.addEventListener("click", (event) => {
       icon: "success",
       title:
         "¡Gracias por tu compra!, te enviaremos un mail a tu casilla en unos minutos",
-      showConfirmButton: false,
+      showConfirmButton: true,
       timer: 2500,
     });
+    const irA = () => {
+      const link = "../page/productosypresentaciones.html";
+      location.replace(link);
+    };
+    irA();
   }
 });
 

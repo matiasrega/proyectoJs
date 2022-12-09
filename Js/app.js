@@ -60,6 +60,8 @@ const renderizacionDeProductos = () => {
 const sweetAlertPopA = () => {
   let timerInterval;
   Swal.fire({
+    background: "hsl(270deg, 3%, 87%)",
+    confirmButtonColor: "hsl(278deg, 68%, 11%)",
     toast: true,
     title: "Producto Agregado al carrito",
     html: "",
@@ -102,8 +104,8 @@ const filtroBusqueda = () => {
       producto.tipoDeProducto.includes(inputProductoBuscado.toLowerCase()) ||
       producto.nombre.includes(inputProductoBuscado.toLowerCase()) ||
       producto.familiaDeProducto.includes(inputProductoBuscado.toLowerCase()) ||
-      producto.presentacion.includes(inputProductoBuscado.toLowerCase()) ||
-      producto.descripcion.includes(inputProductoBuscado.toLowerCase())
+      producto.presentacion.includes(inputProductoBuscado.toLowerCase())
+    /*       producto.descripcion.includes(inputProductoBuscado.toLowerCase()) */
   );
   Productos.innerHTML = "";
   productofiltradoDelTotal.forEach((producto) => {

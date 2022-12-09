@@ -67,8 +67,8 @@ const EliminarDelCarrito = (e) => {
   );
 
   localStorage.setItem("carrito", JSON.stringify(carrito));
+
   renderizarCarrito();
-  sweetAlertPopB();
   actualizarPagina();
 };
 
@@ -104,31 +104,6 @@ const botonesDeFinalizacion = () => {
   botonVaciarCarrito.addEventListener("click", sweetAlertPopConfirm);
 };
 
-//SweetAlert eliminar Productos del carrito
-const sweetAlertPopB = () => {
-  let timerInterval;
-  Swal.fire({
-    toast: true,
-    title: "Producto eliminado del carrito",
-    html: "",
-    timer: 900,
-    timerProgressBar: true,
-    didOpen: () => {
-      Swal.showLoading();
-      const b = Swal.getHtmlContainer().querySelector("b");
-      timerInterval = setInterval(() => {
-        b.textContent = Swal.getTimerLeft();
-      }, 100);
-    },
-    willClose: () => {
-      clearInterval(timerInterval);
-    },
-  }).then((result) => {
-    if (result.dismiss === Swal.DismissReason.timer) {
-    }
-  });
-};
-
 // FUNCIONALIDAD DE BOTON DE VACIADO DE CARRITO //
 const sweetAlertPopConfirm = () => {
   Swal.fire({
@@ -136,7 +111,8 @@ const sweetAlertPopConfirm = () => {
     text: "ATENCIÓN: Esta operacion no puede revertirse",
     icon: "warning",
     showCancelButton: true,
-    confirmButtonColor: "#3085d6",
+    background: "hsl(270deg, 3%, 87%)",
+    confirmButtonColor: "hsl(278deg, 68%, 11%)",
     cancelButtonColor: "#d33",
     confirmButtonText: "¡Si, quiero vaciarlo!",
     cancelButtonText: "Cancelar",
@@ -178,4 +154,3 @@ if (carrito.length > 0) {
 const actualizarPagina = () => {
   location.reload();
 };
-/*setInterval(actualizarPagina, 5000);*/
